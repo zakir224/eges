@@ -1,0 +1,19 @@
+
+header,section,footer{
+    width: 90% !important;
+}
+
+body{
+    background: #f5f5f5;
+    font-size: 13px;
+}
+.topNav{
+
+    margin-top: 35px;
+}
+.logoMargin{
+    margin-top: 5px;
+}
+.divShadow{
+    box-shadow: 0px 5px 5px gray;
+}
