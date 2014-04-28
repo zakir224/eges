@@ -234,6 +234,7 @@ class User_model extends CI_Model{
                 VALUES (
                 NULL , '$applicant_id', ''
                 );";
+        
         $query = $this->db->query($sql);
         $sql = "INSERT INTO preference ( applicant_id, institution) VALUES ( '$applicant_id', '');";
 
