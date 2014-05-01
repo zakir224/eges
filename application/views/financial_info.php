@@ -147,11 +147,7 @@
 
                 <div class="form-group">
                     <div class="col-lg-9">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;
-                        &nbsp;
-                        &nbsp;
-                        <input type="submit" value="Update" style="background: #003399;width: 100px;height: 30px;color: #ffffff;font-style: oblique">
+                        <input type="submit" value="Update" class="btn btn-primary btn-sm" style="margin-left: 810px">
                     </div>
                 </div>
 

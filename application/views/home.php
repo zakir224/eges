@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>EGE Services</title>
 
     <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
 
@@ -28,8 +28,8 @@
     <div class="row">
 
         <form  role="form">
-            <div class="col-lg-12">
-                <div class="well" style="background: #ffffff;">
+            <div class="col-lg-12 well" style="background: #ffffff;">
+
                     <h3>List of Applicants</h3>
 <!--                    <table class="table table-hover table-bordered">-->
 <!--                        <thead>-->
@@ -63,7 +63,7 @@
 <!--                        </tbody>-->
 <!--                    </table>-->
 
-                    <table id="example">
+                    <table id="example" class="col-lg-12 table table-hover table-bordered" style="width: 100%">
                         <thead>
                         <tr><th>Applicant ID</th><th>Picture</th><th>First Name</th><th>Last Name</th><th>Actions</th></tr>
                         </thead>
@@ -92,7 +92,7 @@
                         <!--    <tr><td>--><?php //echo $applicant[1]['applicant_id'];?><!--</td><td>--><?php //echo $applicant[1]['applicant_id'];?><!--</td></tr>-->
                         </tbody>
                     </table>
-                </div>
+
             </div>
         </form>
     </div>

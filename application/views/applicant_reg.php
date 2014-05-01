@@ -84,9 +84,8 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label  class="col-lg-4 control-label"></label>
-                    <div class="col-lg-5">
-                        <input type="submit" value="Save" style="background: #003399;width: 100px;height: 30px;color: #ffffff;font-style: oblique">
+                    <div class="col-lg-9">
+                        <input type="submit" value="Done" class="btn btn-primary btn-sm" style="margin-left: 830px">
                     </div>
                 </div>
             </div>

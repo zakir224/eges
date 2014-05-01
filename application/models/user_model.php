@@ -16,7 +16,10 @@ class User_model extends CI_Model{
         if(count($this->db->query($sql)->row_array())==0) {
             return $idInitial."001";
         } else
-            return $this->db->query($sql)->row_array()['applicant_id+1'];
+        {
+            $data = $this->db->query($sql)->row_array();
+            return $data['applicant_id+1'];
+        }
     }
 
     public function insert_applicant_info($id){
@@ -234,7 +237,7 @@ class User_model extends CI_Model{
                 VALUES (
                 NULL , '$applicant_id', ''
                 );";
-        
+
         $query = $this->db->query($sql);
         $sql = "INSERT INTO preference ( applicant_id, institution) VALUES ( '$applicant_id', '');";
 

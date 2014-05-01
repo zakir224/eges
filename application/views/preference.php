@@ -87,6 +87,11 @@
                         <input type="text" class="form-control" name="institute2" id="inputEmail" value="" placeholder="Institution(2nd)">
                     </div>
                 </div>
+                <div class="form-group">
+                    <div class="col-lg-9">
+                        <input type="submit" value="Update" class="btn btn-primary btn-sm" style="margin-left: 810px">
+                    </div>
+                </div>
 
             </div>
         </form>

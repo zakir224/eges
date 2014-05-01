@@ -72,9 +72,8 @@
                             <label for="inputEmail" class="col-lg-3 control-label">Gender</label>
                             <div class="col-lg-9">
                                 <select class="form-control" name="gender" >
-                                    <option value="">---</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
+                                    <option value="Male" <?php if($applicant['gender']=='Male'){echo "selected";} ?>>Male</option>
+                                    <option value="Female" <?php if($applicant['gender']=='Female'){echo "selected";} ?>>Female</option>
                                 </select>
                             </div>
 
@@ -159,11 +158,7 @@
 
                         <div class="form-group">
                             <div class="col-lg-9">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;
-                                &nbsp;
-                                &nbsp;
-                                <input type="submit" value="Update" style="background: #003399;width: 100px;height: 30px;color: #ffffff;font-style: oblique">
+                                <input type="submit" value="Update" class="btn btn-primary btn-sm" style="margin-left: 480px">
                             </div>
                         </div>
                     </div>
