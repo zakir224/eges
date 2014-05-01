@@ -74,17 +74,31 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail" class="col-lg-3 control-label">Attachment(SSC)</label>
+                                <label for="inputEmail" class="col-lg-3 control-label">certificate(SSC)</label>
 
                                 <div class="col-lg-9">
                                     <div class="col-lg-9">
-                                        <?php if($educational['ssc_attachment']) {?>
-                                            <a href="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['ssc_attachment'];?>"><img src="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['ssc_attachment'];?>"
+                                        <?php if($educational['ssc_certificate']) {?>
+                                            <a href="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['ssc_certificate'];?>"><img src="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['ssc_certificate'];?>"
                                                                                                                                                width="150" height="150" style="margin-top: 10px; padding: 5px;background: lightgray"></a>
                                         <?php }?>
 
                                     </div>
-                                    <input type="file" name="ssc_attachment">
+                                    <input type="file" name="ssc_certificate">
+
+                                </div>
+
+                                <label for="inputEmail" class="col-lg-3 control-label">Mark sheet(SSC)</label>
+                                <div class="col-lg-9">
+                                    <div class="col-lg-9">
+                                        <?php if($educational['ssc_marksheet']) {?>
+                                            <a href="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['ssc_marksheet'];?>"><img src="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['ssc_marksheet'];?>"
+                                                                                                                                                                  width="150" height="150" style="margin-top: 10px; padding: 5px;background: lightgray"></a>
+                                        <?php }?>
+
+                                    </div>
+                                    <input type="file" name="ssc_marksheet">
+
                                 </div>
                             </div>
                         </div>
@@ -124,11 +138,25 @@
                                 <label for="inputEmail" class="col-lg-3 control-label">Attachment(HSC)</label>
 
                                 <div class="col-lg-9">
-                                    <?php if($educational['hsc_attachment']) {?>
-                                        <a href="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['hsc_attachment'];?>"><img src="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['hsc_attachment'];?>"
+                                    <?php if($educational['hsc_certificate']) {?>
+                                        <a href="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['hsc_certificate'];?>"><img src="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['hsc_certificate'];?>"
                                                                                                                                        width="150" height="150" style="margin-top: 10px; padding: 5px;background: lightgray"></a>
                                     <?php }?>
-                                    <input type="file" name="hsc_attachment">
+                                    <input type="file" name="hsc_certificate">
+                                </div>
+
+
+                                <div class="col-lg-9">
+                                    <label for="inputEmail" class="col-lg-3 control-label">Mark sheet(HSC)</label>
+                                    <div class="col-lg-9">
+                                        <?php if($educational['hsc_marksheet']) {?>
+                                            <a href="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['hsc_marksheet'];?>"><img src="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['hsc_marksheet'];?>"
+                                                                                                                                                                  width="150" height="150" style="margin-top: 10px; padding: 5px;background: lightgray"></a>
+                                        <?php }?>
+
+                                    </div>
+                                    <input type="file" name="hsc_marksheet">
+
                                 </div>
                             </div>
                         </div>
@@ -169,14 +197,26 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail" class="col-lg-3 control-label">Attachment(Bachelors)</label>
+                                <label for="inputEmail" class="col-lg-3 control-label">certificate(Bachelors)</label>
 
                                 <div class="col-lg-9">
-                                    <?php if($educational['b_attachment']) {?>
-                                        <a href="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['b_attachment'];?>"><img src="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['b_attachment'];?>"
+                                    <?php if($educational['b_certificate']) {?>
+                                        <a href="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['b_certificate'];?>"><img src="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['b_certificate'];?>"
                                                                                                                                        width="150" height="150" style="margin-top: 10px; padding: 5px;background: lightgray"></a>
                                     <?php }?>
-                                    <input type="file" name="b_attachment">
+                                    <input type="file" name="b_certificate">
+                                </div>
+
+                                <div class="col-lg-9">
+                                    <div class="col-lg-9">
+                                        <?php if($educational['b_marksheet']) {?>
+                                            <a href="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['b_marksheet'];?>"><img src="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['b_marksheet'];?>"
+                                                                                                                                                                  width="150" height="150" style="margin-top: 10px; padding: 5px;background: lightgray"></a>
+                                        <?php }?>
+
+                                    </div>
+                                    <input type="file" name="b_marksheet">
+
                                 </div>
                             </div>
                         </div>
@@ -213,14 +253,26 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail" class="col-lg-3 control-label">Attachment(Masters)</label>
+                                <label for="inputEmail" class="col-lg-3 control-label">certificate(Masters)</label>
 
                                 <div class="col-lg-9">
-                                    <?php if($educational['m_attachment']) {?>
-                                        <a href="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['m_attachment'];?>"><img src="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['m_attachment'];?>"
+                                    <?php if($educational['m_certificate']) {?>
+                                        <a href="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['m_certificate'];?>"><img src="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['m_certificate'];?>"
                                                                                                                    width="150" height="150" style="margin-top: 10px; padding: 5px;background: lightgray"></a>
                                     <?php }?>
-                                    <input type="file" name="m_attachment">
+                                    <input type="file" name="m_certificate">
+                                </div>
+
+                                <div class="col-lg-9">
+                                    <div class="col-lg-9">
+                                        <?php if($educational['m_marksheet']) {?>
+                                            <a href="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['m_marksheet'];?>"><img src="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$educational['m_marksheet'];?>"
+                                                                                                                                                                  width="150" height="150" style="margin-top: 10px; padding: 5px;background: lightgray"></a>
+                                        <?php }?>
+
+                                    </div>
+                                    <input type="file" name="m_marksheet">
+
                                 </div>
                             </div>
                         </div>

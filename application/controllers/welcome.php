@@ -141,66 +141,128 @@ class Welcome extends CI_Controller
     public function update_education_info()
     {
 
-        if ($_FILES['ssc_attachment']['name']) {
-            $path = $_FILES['ssc_attachment']['name'];
+        if ($_FILES['ssc_certificate']['name']) {
+            $path = $_FILES['ssc_certificate']['name'];
             $ext = pathinfo($path, PATHINFO_EXTENSION);
-            $name = "ssc_attachment_" . $_POST['applicant_id'];
-            if ($this->user_model->tempUploadFile('ssc_attachment', $name)) {
+            $name = "ssc_certificate_" . $_POST['applicant_id'];
+            if ($this->user_model->tempUploadFile('ssc_certificate', $name)) {
                 $data['education'] = $this->user_model->get_financial_info($_POST['applicant_id']);
                 $imageName = 'image' . "_" . $name;
-                if (isset($data['education']['ssc_attachment']))
-                    $this->updateFile($_POST['applicant_id'], $data['education']['ssc_attachment'], $imageName, $ext);
+                if (isset($data['education']['ssc_certificate']))
+                    $this->updateFile($_POST['applicant_id'], $data['education']['ssc_certificate'], $imageName, $ext);
                 else
                     $this->updateFile($_POST['applicant_id'], "", $imageName, $ext);
-                $_POST['ssc_attachment'] = $imageName . '.' . $ext;
+                $_POST['ssc_certificate'] = $imageName . '.' . $ext;
                 //$_POST['image'] = $imageName;
             }
         }
-        if ($_FILES['hsc_attachment']['name']) {
-            $path = $_FILES['hsc_attachment']['name'];
+
+        if ($_FILES['ssc_marksheet']['name']) {
+            $path = $_FILES['ssc_marksheet']['name'];
             $ext = pathinfo($path, PATHINFO_EXTENSION);
-            $name = "hsc_attachment_" . $_POST['applicant_id'];
-            if ($this->user_model->tempUploadFile('hsc_attachment', $name)) {
+            $name = "ssc_marksheet_" . $_POST['applicant_id'];
+            if ($this->user_model->tempUploadFile('ssc_marksheet', $name)) {
                 $data['education'] = $this->user_model->get_financial_info($_POST['applicant_id']);
                 $imageName = 'image' . "_" . $name;
-                if (isset($data['education']['hsc_attachment']))
-                    $this->updateFile($_POST['applicant_id'], $data['education']['hsc_attachment'], $imageName, $ext);
+                if (isset($data['education']['ssc_marksheet']))
+                    $this->updateFile($_POST['applicant_id'], $data['education']['ssc_marksheet'], $imageName, $ext);
                 else
                     $this->updateFile($_POST['applicant_id'], "", $imageName, $ext);
-                $_POST['hsc_attachment'] = $imageName . '.' . $ext;
+                $_POST['ssc_marksheet'] = $imageName . '.' . $ext;
+                //$_POST['image'] = $imageName;
+            }
+        }
+        if ($_FILES['hsc_certificate']['name']) {
+            $path = $_FILES['hsc_certificate']['name'];
+            $ext = pathinfo($path, PATHINFO_EXTENSION);
+            $name = "hsc_certificate_" . $_POST['applicant_id'];
+            if ($this->user_model->tempUploadFile('hsc_certificate', $name)) {
+                $data['education'] = $this->user_model->get_financial_info($_POST['applicant_id']);
+                $imageName = 'image' . "_" . $name;
+                if (isset($data['education']['hsc_certificate']))
+                    $this->updateFile($_POST['applicant_id'], $data['education']['hsc_certificate'], $imageName, $ext);
+                else
+                    $this->updateFile($_POST['applicant_id'], "", $imageName, $ext);
+                $_POST['hsc_certificate'] = $imageName . '.' . $ext;
                 //redirect("welcome/financial_info/".$_POST['applicant_id']);
                 //$_POST['image'] = $imageName;
             }
         }
-        if ($_FILES['b_attachment']['name']) {
-            $path = $_FILES['b_attachment']['name'];
+        if ($_FILES['hsc_marksheet']['name']) {
+            $path = $_FILES['hsc_marksheet']['name'];
             $ext = pathinfo($path, PATHINFO_EXTENSION);
-            $name = "b_attachment_" . $_POST['applicant_id'];
-            if ($this->user_model->tempUploadFile('b_attachment', $name)) {
+            $name = "hsc_marksheet_" . $_POST['applicant_id'];
+            if ($this->user_model->tempUploadFile('hsc_marksheet', $name)) {
                 $data['education'] = $this->user_model->get_financial_info($_POST['applicant_id']);
                 $imageName = 'image' . "_" . $name;
-                if (isset($data['education']['b_attachment']))
-                    $this->updateFile($_POST['applicant_id'], $data['education']['b_attachment'], $imageName, $ext);
+                if (isset($data['education']['hsc_marksheet']))
+                    $this->updateFile($_POST['applicant_id'], $data['education']['hsc_marksheet'], $imageName, $ext);
                 else
                     $this->updateFile($_POST['applicant_id'], "", $imageName, $ext);
-                $_POST['b_attachment'] = $imageName . '.' . $ext;
+                $_POST['hsc_marksheet'] = $imageName . '.' . $ext;
+                //$_POST['image'] = $imageName;
+            }
+        }
+        if ($_FILES['b_certificate']['name']) {
+            $path = $_FILES['b_certificate']['name'];
+            $ext = pathinfo($path, PATHINFO_EXTENSION);
+            $name = "b_certificate_" . $_POST['applicant_id'];
+            if ($this->user_model->tempUploadFile('b_certificate', $name)) {
+                $data['education'] = $this->user_model->get_financial_info($_POST['applicant_id']);
+                $imageName = 'image' . "_" . $name;
+                if (isset($data['education']['b_certificate']))
+                    $this->updateFile($_POST['applicant_id'], $data['education']['b_certificate'], $imageName, $ext);
+                else
+                    $this->updateFile($_POST['applicant_id'], "", $imageName, $ext);
+                $_POST['b_certificate'] = $imageName . '.' . $ext;
                 //redirect("welcome/financial_info/".$_POST['applicant_id']);
                 //$_POST['image'] = $imageName;
             }
         }
-        if ($_FILES['m_attachment']['name']) {
-            $path = $_FILES['m_attachment']['name'];
+
+        if ($_FILES['b_marksheet']['name']) {
+            $path = $_FILES['b_marksheet']['name'];
             $ext = pathinfo($path, PATHINFO_EXTENSION);
-            $name = "m_attachment_" . $_POST['applicant_id'];
-            if ($this->user_model->tempUploadFile('m_attachment', $name)) {
+            $name = "b_marksheet_" . $_POST['applicant_id'];
+            if ($this->user_model->tempUploadFile('b_marksheet', $name)) {
                 $data['education'] = $this->user_model->get_financial_info($_POST['applicant_id']);
                 $imageName = 'image' . "_" . $name;
-                if (isset($data['education']['m_attachment']))
-                    $this->updateFile($_POST['applicant_id'], $data['education']['m_attachment'], $imageName, $ext);
+                if (isset($data['education']['b_marksheet']))
+                    $this->updateFile($_POST['applicant_id'], $data['education']['b_marksheet'], $imageName, $ext);
                 else
                     $this->updateFile($_POST['applicant_id'], "", $imageName, $ext);
-                $_POST['m_attachment'] = $imageName . '.' . $ext;
+                $_POST['b_marksheet'] = $imageName . '.' . $ext;
+                //$_POST['image'] = $imageName;
+            }
+        }
+        if ($_FILES['m_certificate']['name']) {
+            $path = $_FILES['m_certificate']['name'];
+            $ext = pathinfo($path, PATHINFO_EXTENSION);
+            $name = "m_certificate_" . $_POST['applicant_id'];
+            if ($this->user_model->tempUploadFile('m_certificate', $name)) {
+                $data['education'] = $this->user_model->get_financial_info($_POST['applicant_id']);
+                $imageName = 'image' . "_" . $name;
+                if (isset($data['education']['m_certificate']))
+                    $this->updateFile($_POST['applicant_id'], $data['education']['m_certificate'], $imageName, $ext);
+                else
+                    $this->updateFile($_POST['applicant_id'], "", $imageName, $ext);
+                $_POST['m_certificate'] = $imageName . '.' . $ext;
                 //redirect("welcome/financial_info/".$_POST['applicant_id']);
+                //$_POST['image'] = $imageName;
+            }
+        }
+        if ($_FILES['m_marksheet']['name']) {
+            $path = $_FILES['m_marksheet']['name'];
+            $ext = pathinfo($path, PATHINFO_EXTENSION);
+            $name = "m_marksheet_" . $_POST['applicant_id'];
+            if ($this->user_model->tempUploadFile('m_marksheet', $name)) {
+                $data['education'] = $this->user_model->get_financial_info($_POST['applicant_id']);
+                $imageName = 'image' . "_" . $name;
+                if (isset($data['education']['m_marksheet']))
+                    $this->updateFile($_POST['applicant_id'], $data['education']['m_marksheet'], $imageName, $ext);
+                else
+                    $this->updateFile($_POST['applicant_id'], "", $imageName, $ext);
+                $_POST['m_marksheet'] = $imageName . '.' . $ext;
                 //$_POST['image'] = $imageName;
             }
         }
@@ -359,43 +421,71 @@ class Welcome extends CI_Controller
     public function downloadAttachment($id)
     {
 
-        // Generate PDF by saying hello to the world
-        $this->load->library('pdf');
-        $pdf = new Pdf();
-        $pdf->AliasNbPages();
+//        // Generate PDF by saying hello to the world
+//        $this->load->library('pdf');
+//        $pdf = new Pdf();
+//        $pdf->AliasNbPages();
+//
+//        $data['financial'] = $this->user_model->get_financial_info($id);
+//        $data['other_certificate'] = $this->user_model->getOtherCertificate($id);
+//        $images = array(0 => $data['financial']['recom_letter'], 1 => $data['financial']['study_job_certificate'],
+//            2 => $data['financial']['sop'],);
+//
+//        for ($i = 0; $i < count($data['other_certificate']); $i++) {
+//            array_push($images, $data['other_certificate'][$i]['other_certificate']);
+//        }
+//
+//        $pdf->SetFont('Times', '', 8);
+//        //for($i=1;$i<=40;$i++)
+//        for ($i = 0; $i < count($images); $i++) {
+//            $config['image_library'] = 'gd2';
+//            $config['source_image'] = 'images/' . $id . "/" . $images[$i];
+//            $config['create_thumb'] = TRUE;
+//            $config['maintain_ratio'] = TRUE;
+//            $config['width'] = 400;
+//            //$config['height'] = 50;
+//
+//            $this->load->library('image_lib', $config);
+//
+//            $this->image_lib->resize();
+//            if ($images[$i] != "") {
+//                $pdf->AddPage();
+//
+//                $pdf->Image('images/' . $id . "/" . $images[$i], $pdf->GetX(), $pdf->GetY());
+//            }
+//        }
+////        $pdf->Image('images/'.$id."/".$data['financial']['study_job_certificate'], $pdf->GetX(), $pdf->GetY());
+////        $pdf->AddPage();
+////        $pdf->Image('images/'.$id."/".$data['financial']['sop'], $pdf->GetX(), $pdf->GetY());
+//        $pdf->Output();
 
-        $data['financial'] = $this->user_model->get_financial_info($id);
-        $data['other_certificate'] = $this->user_model->getOtherCertificate($id);
-        $images = array(0 => $data['financial']['recom_letter'], 1 => $data['financial']['study_job_certificate'],
+
+        $pdfFilePath = $id."_attachment.pdf";
+        $data['page_title'] = 'Hello world'; // pass data to the view
+
+        if (file_exists($pdfFilePath) == FALSE)
+        {
+            $data['financial'] = $this->user_model->get_financial_info($id);
+            $data['other_certificate'] = $this->user_model->getOtherCertificate($id);
+            $data['images'] = array(0 => $data['financial']['recom_letter'], 1 => $data['financial']['study_job_certificate'],
             2 => $data['financial']['sop'],);
 
-        for ($i = 0; $i < count($data['other_certificate']); $i++) {
-            array_push($images, $data['other_certificate'][$i]['other_certificate']);
-        }
-
-        $pdf->SetFont('Times', '', 8);
-        //for($i=1;$i<=40;$i++)
-        for ($i = 0; $i < count($images); $i++) {
-            $config['image_library'] = 'gd2';
-            $config['source_image'] = 'images/' . $id . "/" . $images[$i];
-            $config['create_thumb'] = TRUE;
-            $config['maintain_ratio'] = TRUE;
-            $config['width'] = 400;
-            //$config['height'] = 50;
-
-            $this->load->library('image_lib', $config);
-
-            $this->image_lib->resize();
-            if ($images[$i] != "") {
-                $pdf->AddPage();
-
-                $pdf->Image('images/' . $id . "/" . $images[$i], $pdf->GetX(), $pdf->GetY());
+            for ($i = 0; $i < count($data['other_certificate']); $i++) {
+            array_push($data['images'], $data['other_certificate'][$i]['other_certificate']);
             }
+
+            $data['financial'] = $this->user_model->get_financial_info($id);
+            ini_set('memory_limit','32M'); // boost the memory limit if it's low <img src="http://davidsimpson.me/wp-includes/images/smilies/icon_wink.gif" alt=";)" class="wp-smiley">
+            $html = $this->load->view('test', $data, true); // render the view into HTML
+
+            $this->load->library('pdf');
+            $pdf = $this->pdf->load();
+            $pdf->SetFooter($_SERVER['HTTP_HOST'].'|{PAGENO}|'.date(DATE_RFC822)); // Add a footer for good measure <img src="http://davidsimpson.me/wp-includes/images/smilies/icon_wink.gif" alt=";)" class="wp-smiley">
+            $pdf->WriteHTML($html); // write the HTML into the PDF
+            $pdf->Output($pdfFilePath, 'D'); // save to file because we can
         }
-//        $pdf->Image('images/'.$id."/".$data['financial']['study_job_certificate'], $pdf->GetX(), $pdf->GetY());
-//        $pdf->AddPage();
-//        $pdf->Image('images/'.$id."/".$data['financial']['sop'], $pdf->GetX(), $pdf->GetY());
-        $pdf->Output();
+
+        //redirect("images/test.pdf");
     }
 
 }
