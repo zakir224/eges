@@ -22,6 +22,7 @@ class User_model extends CI_Model{
         }
     }
 
+
     public function insert_applicant_info($id){
 
         $fn = $_POST['first_name'];
@@ -163,13 +164,14 @@ class User_model extends CI_Model{
 
     function update_educational_info()
     {
-  $ssc['ssc_gpa_result'] = $_POST['ssc_gpa_result'];
+        $ssc['ssc_gpa_result'] = $_POST['ssc_gpa_result'];
         $ssc['ssc_institution'] = $_POST['ssc_institution'];
         $ssc['ssc_board'] = $_POST['ssc_board'];
         $ssc['ssc_passing_year'] = $_POST['ssc_passing_year'];
-        if(isset($_POST['ssc_attachment']))
-            $ssc['ssc_attachment'] = $_POST['ssc_attachment'];
-
+        if(isset($_POST['ssc_certificate']))
+            $ssc['ssc_certificate'] = $_POST['ssc_certificate'];
+        if(isset($_POST['ssc_marksheet']))
+            $ssc['ssc_marksheet'] = $_POST['ssc_marksheet'];
         $this->db->where('applicant_id',$_POST['applicant_id']);
         $this->db->update('ssc',$ssc);
 
@@ -177,8 +179,10 @@ class User_model extends CI_Model{
         $hsc['hsc_institution'] = $_POST['hsc_institution'];
         $hsc['hsc_board'] = $_POST['hsc_board'];
         $hsc['hsc_passing_year'] = $_POST['hsc_passing_year'];
-        if(isset($_POST['hsc_attachment']))
-            $hsc['hsc_attachment'] = $_POST['hsc_attachment'];
+        if(isset($_POST['hsc_certificate']))
+            $hsc['hsc_certificate'] = $_POST['hsc_certificate'];
+        if(isset($_POST['hsc_marksheet']))
+            $hsc['hsc_marksheet'] = $_POST['hsc_marksheet'];
         $this->db->where('applicant_id',$_POST['applicant_id']);
         $this->db->update('hsc',$hsc);
 
@@ -186,8 +190,10 @@ class User_model extends CI_Model{
         $bsc['b_institution'] = $_POST['b_institution'];
         $bsc['b_subject'] = $_POST['b_subject'];
         $bsc['b_passing_year'] = $_POST['b_passing_year'];
-        if(isset($_POST['b_attachment']))
-            $bsc['b_attachment'] = $_POST['b_attachment'];
+        if(isset($_POST['b_certificate']))
+            $bsc['b_certificate'] = $_POST['b_certificate'];
+        if(isset($_POST['b_marksheet']))
+            $bsc['b_marksheet'] = $_POST['b_marksheet'];
         $this->db->where('applicant_id',$_POST['applicant_id']);
         $this->db->update('bachelors',$bsc);
 
@@ -195,8 +201,10 @@ class User_model extends CI_Model{
         $msc['m_institution'] = $_POST['m_institution'];
         $msc['m_subject'] = $_POST['m_subject'];
         $msc['m_passing_year'] = $_POST['m_passing_year'];
-        if(isset($_POST['m_attachment']))
-            $msc['m_attachment'] = $_POST['m_attachment'];
+        if(isset($_POST['m_certificate']))
+            $msc['m_certificate'] = $_POST['m_certificate'];
+        if(isset($_POST['m_marksheet']))
+            $msc['m_marksheet'] = $_POST['m_marksheet'];
         $this->db->where('applicant_id',$_POST['applicant_id']);
         $this->db->update('masters',$msc);
     }
@@ -211,16 +219,16 @@ class User_model extends CI_Model{
     function insert_forms($applicant_id) {                  /*Called when a new applicant information is added in the system*/
         //$insert['applicant_id'] =$data['applicant_id'];
 
-        $sql = "INSERT INTO bachelors ( applicant_id, b_subject, b_gpa_result, b_institution, b_passing_year, b_attachment)
+        $sql = "INSERT INTO bachelors ( applicant_id, b_subject, b_gpa_result, b_institution, b_passing_year, b_certificate,b_marksheet)
                 VALUES ( '$applicant_id', '', '', '', '', '');";
         $query = $this->db->query($sql);
-        $sql = "INSERT INTO masters ( applicant_id, m_subject, m_gpa_result, m_institution, m_passing_year, m_attachment)
+        $sql = "INSERT INTO masters ( applicant_id, m_subject, m_gpa_result, m_institution, m_passing_year, m_certificate,m_marksheet)
                 VALUES ( '$applicant_id', '', '', '', '', '');";
         $query = $this->db->query($sql);
-        $sql = "INSERT INTO hsc ( applicant_id, hsc_gpa_result, hsc_institution, hsc_board, hsc_passing_year, hsc_attachment)
+        $sql = "INSERT INTO hsc ( applicant_id, hsc_gpa_result, hsc_institution, hsc_board, hsc_passing_year, hsc_certificate,hsc_marksheet)
          VALUES ( '$applicant_id', '', '', '', '', '');";
         $query = $this->db->query($sql);
-        $sql = "INSERT INTO ssc ( applicant_id, ssc_gpa_result, ssc_institution, ssc_board, ssc_passing_year, ssc_attachment)
+        $sql = "INSERT INTO ssc ( applicant_id, ssc_gpa_result, ssc_institution, ssc_board, ssc_passing_year, ssc_certificate,ssc_marksheet)
          VALUES ( '$applicant_id', '', '', '', '', '');";
         $query = $this->db->query($sql);
         $sql = "INSERT INTO target_study ( applicant_id, level, session, year, country, state, city)

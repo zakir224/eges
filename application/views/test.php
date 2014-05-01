@@ -2,10 +2,12 @@
 
 
 <body>
-<form enctype="multipart/form-data" method="post" action="<?php echo base_url('index.php/welcome/test')?>">
-    <input type="file" name="test1">
-    <input type="file" name="test2">
-    <input type="submit" value="s">
+
+
+    <?php print_r($images);
+    for($i=0;$i<count($images);$i++) { ?>
+    <img src="<?php echo base_url(''); ?>/images/201404001/<?php echo $images[$i];?>" width="800">
+    <?php } ?>
 </form>
 </body>
 </html>
