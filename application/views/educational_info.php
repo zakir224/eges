@@ -102,7 +102,7 @@
 
                   <div class="col-lg-6">
 
-                        <div class="well" style="background: #ffffff">
+                        <div class="well" style="background: #ffffff;height: 675px;">
                             <h4>Intermediate/equivalent level</h4>
                             <div class="form-group">
                                 <label for="inputEmail" class="col-lg-3 control-label">Result(gpa)</label>
@@ -308,14 +308,18 @@
                         <input type="file" multiple="multiple" name="other_education[]">
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-lg-9">
-                        <input type="submit" value="Update" class="btn btn-primary btn-sm" style="margin-left: 800px">
-                    </div>
-                </div>
-         </div>
+
+             </div>
             </div>
+
         </form>
+    </div>
+    <div class="col-lg-16">
+        <div class="form-group">
+            <div class="col-lg-9">
+                <input type="submit" value="Update" class="btn btn-primary btn-group-sm" style="margin-left: 400px;">
+            </div>
+        </div>
     </div>
 </section>
 
