@@ -426,10 +426,19 @@ class Welcome extends CI_Controller
         if (file_exists($pdfFilePath) == FALSE)
         {
             $data['financial'] = $this->user_model->get_financial_info($id);
+            $data['education'] = $this->user_model->getEducationInfo($id);
             $data['other_certificate'] = $this->user_model->getOtherCertificate($id);
             $data['other_education'] = $this->user_model->getOtherEducationCertificate($id);
             $data['images'] = array(0 => $data['financial']['recom_letter'], 1 => $data['financial']['study_job_certificate'],
-            2 => $data['financial']['sop'],);
+                2 => $data['financial']['sop'],
+                3 => $data['education']['ssc_certificate'],
+                4 => $data['education']['ssc_marksheet'],
+                5 => $data['education']['hsc_certificate'],
+                6 => $data['education']['hsc_marksheet'],
+                7 => $data['education']['b_certificate'],
+                8 => $data['education']['b_marksheet'],
+                9 => $data['education']['m_certificate'],
+                10 => $data['education']['m_marksheet']);
 
             for ($i = 0; $i < count($data['other_certificate']); $i++) {
             array_push($data['images'], $data['other_certificate'][$i]['other_certificate']);
@@ -450,6 +459,10 @@ class Welcome extends CI_Controller
             $pdf->WriteHTML($html);
             $pdf->Output($pdfFilePath, 'D');
         }
+    }
+
+    function delete(){
+
     }
 
 }
