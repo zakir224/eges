@@ -420,44 +420,6 @@ class Welcome extends CI_Controller
 
     public function downloadAttachment($id)
     {
-
-//        // Generate PDF by saying hello to the world
-//        $this->load->library('pdf');
-//        $pdf = new Pdf();
-//        $pdf->AliasNbPages();
-//
-//        $data['financial'] = $this->user_model->get_financial_info($id);
-//        $data['other_certificate'] = $this->user_model->getOtherCertificate($id);
-//        $images = array(0 => $data['financial']['recom_letter'], 1 => $data['financial']['study_job_certificate'],
-//            2 => $data['financial']['sop'],);
-//
-//        for ($i = 0; $i < count($data['other_certificate']); $i++) {
-//            array_push($images, $data['other_certificate'][$i]['other_certificate']);
-//        }
-//
-//        $pdf->SetFont('Times', '', 8);
-//        //for($i=1;$i<=40;$i++)
-//        for ($i = 0; $i < count($images); $i++) {
-//            $config['image_library'] = 'gd2';
-//            $config['source_image'] = 'images/' . $id . "/" . $images[$i];
-//            $config['create_thumb'] = TRUE;
-//            $config['maintain_ratio'] = TRUE;
-//            $config['width'] = 400;
-//            //$config['height'] = 50;
-//
-//            $this->load->library('image_lib', $config);
-//
-//            $this->image_lib->resize();
-//            if ($images[$i] != "") {
-//                $pdf->AddPage();
-//
-//                $pdf->Image('images/' . $id . "/" . $images[$i], $pdf->GetX(), $pdf->GetY());
-//            }
-//        }
-////        $pdf->Image('images/'.$id."/".$data['financial']['study_job_certificate'], $pdf->GetX(), $pdf->GetY());
-////        $pdf->AddPage();
-////        $pdf->Image('images/'.$id."/".$data['financial']['sop'], $pdf->GetX(), $pdf->GetY());
-//        $pdf->Output();
         $applicant = $this->user_model->applicant_info($id);
 
         $pdfFilePath = $id."_".$applicant['first_name'].".pdf";
