@@ -220,16 +220,16 @@ class User_model extends CI_Model{
         //$insert['applicant_id'] =$data['applicant_id'];
 
         $sql = "INSERT INTO bachelors ( applicant_id, b_subject, b_gpa_result, b_institution, b_passing_year, b_certificate,b_marksheet)
-                VALUES ( '$applicant_id', '', '', '', '', '');";
+                VALUES ( '$applicant_id', '', '', '', '', '', '');";
         $query = $this->db->query($sql);
         $sql = "INSERT INTO masters ( applicant_id, m_subject, m_gpa_result, m_institution, m_passing_year, m_certificate,m_marksheet)
-                VALUES ( '$applicant_id', '', '', '', '', '');";
+                VALUES ( '$applicant_id', '', '', '', '', '','');";
         $query = $this->db->query($sql);
         $sql = "INSERT INTO hsc ( applicant_id, hsc_gpa_result, hsc_institution, hsc_board, hsc_passing_year, hsc_certificate,hsc_marksheet)
-         VALUES ( '$applicant_id', '', '', '', '', '');";
+         VALUES ( '$applicant_id', '', '', '', '', '','');";
         $query = $this->db->query($sql);
         $sql = "INSERT INTO ssc ( applicant_id, ssc_gpa_result, ssc_institution, ssc_board, ssc_passing_year, ssc_certificate,ssc_marksheet)
-         VALUES ( '$applicant_id', '', '', '', '', '');";
+         VALUES ( '$applicant_id', '', '', '', '', '','');";
         $query = $this->db->query($sql);
         $sql = "INSERT INTO target_study ( applicant_id, level, session, year, country, state, city)
         VALUES ( '$applicant_id','' , '','' ,'' ,'' ,'' );";
@@ -243,11 +243,11 @@ class User_model extends CI_Model{
                 status
                 )
                 VALUES (
-                NULL , '$applicant_id', ''
+                NULL , '$applicant_id', 'Initial State'
                 );";
 
         $query = $this->db->query($sql);
-        
+
         $sql = "INSERT INTO preference ( applicant_id, institution) VALUES ( '$applicant_id', '');";
 
         $query = $this->db->query($sql);
