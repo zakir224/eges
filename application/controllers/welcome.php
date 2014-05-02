@@ -405,8 +405,6 @@ class Welcome extends CI_Controller
 
     private function updateFile($path, $oldName, $newName, $ext)
     {
-        //echo './images/'.$path."/".$name;
-        //echo './images/'.$path."/".$oldName;
         if ($oldName != "")
             unlink('./images/' . $path . "/" . $oldName);
         copy('./images/temp/' . $newName . "." . $ext, './images/' . $path . "/" . $newName . "." . $ext);
@@ -423,12 +421,13 @@ class Welcome extends CI_Controller
         $applicant = $this->user_model->applicant_info($id);
 
         $pdfFilePath = $id."_".$applicant['first_name'].".pdf";
-        $data['page_title'] = 'Hello world'; // pass data to the view
+
 
         if (file_exists($pdfFilePath) == FALSE)
         {
             $data['financial'] = $this->user_model->get_financial_info($id);
             $data['other_certificate'] = $this->user_model->getOtherCertificate($id);
+            $data['other_education'] = $this->user_model->getOtherEducationCertificate($id);
             $data['images'] = array(0 => $data['financial']['recom_letter'], 1 => $data['financial']['study_job_certificate'],
             2 => $data['financial']['sop'],);
 
@@ -436,19 +435,21 @@ class Welcome extends CI_Controller
             array_push($data['images'], $data['other_certificate'][$i]['other_certificate']);
             }
 
+            for ($i = 0; $i < count($data['other_education']); $i++) {
+                array_push($data['images'], $data['other_education'][$i]['other_edu_certificate']);
+            }
+
             $data['financial'] = $this->user_model->get_financial_info($id);
-            ini_set('memory_limit','32M'); // boost the memory limit if it's low <img src="http://davidsimpson.me/wp-includes/images/smilies/icon_wink.gif" alt=";)" class="wp-smiley">
-            $html = $this->load->view('test', $data, true); // render the view into HTML
+            ini_set('memory_limit','32M');
+            $html = $this->load->view('test', $data, true);
 
             $this->load->library('pdf');
             $pdf = $this->pdf->load();
             $pdf->SetHeader("Education for Destination | Expert Global Education Services | ".$id." ".$applicant['first_name']);
-            $pdf->SetFooter("EGES All rights reserved ,".$_SERVER['HTTP_HOST'].'|{PAGENO}|'.date(DATE_RFC822)); // Add a footer for good measure <img src="http://davidsimpson.me/wp-includes/images/smilies/icon_wink.gif" alt=";)" class="wp-smiley">
-            $pdf->WriteHTML($html); // write the HTML into the PDF
-            $pdf->Output($pdfFilePath, 'D'); // save to file because we can
+            $pdf->SetFooter("EGES All rights reserved ,".$_SERVER['HTTP_HOST'].'|{PAGENO}|'.date(DATE_RFC822));
+            $pdf->WriteHTML($html);
+            $pdf->Output($pdfFilePath, 'D');
         }
-
-        //redirect("images/test.pdf");
     }
 
 }
