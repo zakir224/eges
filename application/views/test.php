@@ -4,7 +4,7 @@
 <body>
 
 
-    <?php print_r($images);
+    <?php
     for($i=0;$i<count($images);$i++) { ?>
     <img src="<?php echo base_url(''); ?>/images/201404001/<?php echo $images[$i];?>" width="800">
     <?php } ?>

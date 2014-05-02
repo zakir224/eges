@@ -458,9 +458,9 @@ class Welcome extends CI_Controller
 ////        $pdf->AddPage();
 ////        $pdf->Image('images/'.$id."/".$data['financial']['sop'], $pdf->GetX(), $pdf->GetY());
 //        $pdf->Output();
+        $applicant = $this->user_model->applicant_info($id);
 
-
-        $pdfFilePath = $id."_attachment.pdf";
+        $pdfFilePath = $id."_".$applicant['first_name'].".pdf";
         $data['page_title'] = 'Hello world'; // pass data to the view
 
         if (file_exists($pdfFilePath) == FALSE)
@@ -480,6 +480,7 @@ class Welcome extends CI_Controller
 
             $this->load->library('pdf');
             $pdf = $this->pdf->load();
+            $pdf->SetHeader("Education for Destination | Expert Global Education Services | ".$id." ".$applicant['first_name']);
             $pdf->SetFooter($_SERVER['HTTP_HOST'].'|{PAGENO}|'.date(DATE_RFC822)); // Add a footer for good measure <img src="http://davidsimpson.me/wp-includes/images/smilies/icon_wink.gif" alt=";)" class="wp-smiley">
             $pdf->WriteHTML($html); // write the HTML into the PDF
             $pdf->Output($pdfFilePath, 'D'); // save to file because we can
