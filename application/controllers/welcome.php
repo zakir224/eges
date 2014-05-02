@@ -460,6 +460,7 @@ class Welcome extends CI_Controller
             $pdf->Output($pdfFilePath, 'D');
         }
     }
+    
 
     function delete(){
 
