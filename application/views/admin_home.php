@@ -36,43 +36,6 @@
                     <h3>List of Applicants</h3>
                 </div>
 
-
-
-
-
-
-                <!--                    <table class="table table-hover table-bordered">-->
-                <!--                        <thead>-->
-                <!--                        <tr>-->
-                <!--                            <th style="width: 10%">Applicant ID</th>-->
-                <!--                            <th style="width: 10%">Picture</th>-->
-                <!--                            <th style="width: 30%">First Name</th>-->
-                <!--                            <th style="width: 30%">Last Name</th>-->
-                <!--                        </tr>-->
-                <!--                        </thead>-->
-                <!--                        <tbody>-->
-                <!--                     --><?php //for($i=0;$i<count($applicant);$i++) { ?>
-                <!--                        <tr>-->
-                <!--                            <td>--><?php //echo $applicant[$i]['applicant_id'];?><!--</td>-->
-                <!--                            <td>                    --><?php //if($applicant[$i]['image']) {?>
-                <!--                                    <a href="--><?php //echo base_url('/images/applicant')."/".$applicant[$i]['image'];?><!--"><img src="--><?php //echo base_url('/images/applicant')."/".$applicant[$i]['image'];?><!--"-->
-                <!--                                                                                                                       width="50" height="50" style="margin-top: 10px; padding: 5px;background: lightgray"></a>-->
-                <!--                                --><?php //}  ?><!--</td>-->
-                <!--                            <td>--><?php //echo $applicant[$i]['first_name'];?><!--</td>-->
-                <!--                            <td>--><?php //echo $applicant[$i]['last_name'];?><!--</td>-->
-                <!--                            <td>-->
-                <!--                                <p>-->
-                <!--                                    <form action="--><?php //echo base_url('index.php/welcome/personal_info');?><!--" method="get">-->
-                <!--                                    <a href="--><?php //echo base_url('index.php/welcome/delete_applicant/')."/".$applicant[$i]['applicant_id'];?><!--" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove-sign"></span></a>-->
-                <!---->
-                <!--                                    <a href="--><?php //echo base_url('index.php/welcome/personal_info/')."/".$applicant[$i]['applicant_id'];?><!--" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a>-->
-                <!--                                </p>-->
-                <!--                            </td>-->
-                <!--                        </tr>-->
-                <!--                        --><?php // } ?>
-                <!--                        </tbody>-->
-                <!--                    </table>-->
-
                 <table id="example" class="col-lg-12 table table-hover table-bordered" style="width: 100%" >
                     <thead>
                     <tr>
@@ -91,7 +54,7 @@
 
                             <td>
                                 <p>
-                                <!-- <form action="<?php //echo base_url('index.php/welcome/personal_info');?>" method="get"> -->
+
                                     <a href="<?php echo base_url('index.php/admin_cont/personal_info')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top"
                                        title="Applicant Details" >
                                         <span class="glyphicon glyphicon-book" ></span>
@@ -115,17 +78,14 @@
                             </td>
                         </tr>
                     <?php } ?>
-                    <!--    <tr><td>--><?php //echo $applicant[1]['applicant_id'];?><!--</td><td>--><?php //echo $applicant[1]['applicant_id'];?><!--</td></tr>-->
-                    <!--    <tr><td>--><?php //echo $applicant[1]['applicant_id'];?><!--</td><td>--><?php //echo $applicant[1]['applicant_id'];?><!--</td></tr>-->
+
                     </tbody>
                 </table>
             </div>
-            <!-- </form>-->
+
         </div>
     </section>
 
-    <!--    <tr><td>--><?php //echo $applicant[1]['applicant_id'];?><!--</td><td>--><?php //echo $applicant[1]['applicant_id'];?><!--</td></tr>-->
-<!--    <tr><td>--><?php //echo $applicant[1]['applicant_id'];?><!--</td><td>--><?php //echo $applicant[1]['applicant_id'];?><!--</td></tr>-->
 </tbody>
 </table>
 <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
@@ -149,7 +109,7 @@
     })
 </script>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
