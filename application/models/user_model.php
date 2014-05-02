@@ -341,6 +341,43 @@ class User_model extends CI_Model{
         $query = $this->db->query($sql);
         return $query->row_array();
     }
+
+    function getApplicantState(){
+        $sql = "SELECT * FROM applicant_status";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function delete_id($id){
+        $this->db->delete('applicant', array('applicant_id' => $id));
+        $this->db->delete('applicant_status', array('applicant_id' => $id));
+        $this->db->delete('bachelors', array('applicant_id' => $id));
+        $this->db->delete('financial_info', array('applicant_id' => $id));
+        $this->db->delete('hsc', array('applicant_id' => $id));
+        $this->db->delete('masters', array('applicant_id' => $id));
+        $this->db->delete('preference', array('applicant_id' => $id));
+        $this->db->delete('ssc', array('applicant_id' => $id));
+        $this->db->delete('target_study', array('applicant_id' => $id));
+        //rmdir('images/'.$id);
+        $dir = 'images/'.$id;
+        $files = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS),
+            RecursiveIteratorIterator::CHILD_FIRST
+        );
+
+        foreach ($files as $fileinfo) {
+            $todo = ($fileinfo->isDir() ? 'rmdir' : 'unlink');
+            $todo($fileinfo->getRealPath());
+        }
+
+        rmdir($dir);
+
+    }
+
+    function update_applicant_info_admin($id,$s) {
+        $sql = "UPDATE applicant_status SET status='$s' WHERE applicant_id='$id'";
+        $query = $this->db->query($sql);
+    }
 }
 
 
