@@ -36,7 +36,8 @@
 
                         <div class="col-lg-4">
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox1" value="option1"> Passport
+                                <input type="checkbox" id="inlineCheckbox1" value="option1" <?php if($applicant['passport'])
+                                {echo 'checked';}else echo 'unchecked';?>> Passport
                             </label>
                         </div>
                     </div>
@@ -45,30 +46,46 @@
                         <div class="col-lg-4">
 
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox2" value="option2"> SSC Certificate
+                                <input type="checkbox" id="inlineCheckbox2" value="option2"
+                                    <?php if($edu['ssc_certificate'])
+                                    {echo 'checked';}else echo 'unchecked';?>> SSC Certificate
                             </label>
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox3" value="option3"> SSC Marks Sheet
+                                <input type="checkbox" id="inlineCheckbox3" value="option3"
+                                    <?php if($edu['ssc_marksheet'])
+                                    {echo 'checked';}else echo 'unchecked';?>> SSC Marks Sheet
                             </label>
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox2" value="option2"> HSC Certificate
+                                <input type="checkbox" id="inlineCheckbox2" value="option2"
+                                    <?php if($edu['hsc_certificate'])
+                                    {echo 'checked';}else echo 'unchecked';?>> HSC Certificate
                             </label>
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox3" value="option3"> HSC Marks Sheet
+                                <input type="checkbox" id="inlineCheckbox3" value="option3"
+                                    <?php if($edu['hsc_marksheet'])
+                                    {echo 'checked';}else echo 'unchecked';?>> HSC Marks Sheet
                             </label>
                         </div>
                         <div class="col-lg-4">
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox1" value="option1"> Bachelors Certificate
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"
+                                    <?php if($edu['b_certificate'])
+                                    {echo 'checked';}else echo 'unchecked';?>> Bachelors Certificate
                             </label>
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox2" value="option2"> Bachelors Marks Sheet
+                                <input type="checkbox" id="inlineCheckbox2" value="option2"
+                                    <?php if($edu['b_marksheet'])
+                                    {echo 'checked';}else echo 'unchecked';?>> Bachelors Marks Sheet
                             </label>
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox3" value="option3"> Masters Certificate
+                                <input type="checkbox" id="inlineCheckbox3" value="option3"
+                                    <?php if($edu['m_certificate'])
+                                    {echo 'checked';}else echo 'unchecked';?>> Masters Certificate
                             </label>
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox1" value="option1"> Masters Marks Sheet
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"
+                                    <?php if($edu['m_marksheet'])
+                                    {echo 'checked';}else echo 'unchecked';?>> Masters Marks Sheet
                             </label>
                         </div>
                         <div class="col-lg-4">
@@ -81,18 +98,18 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox1" value="option1"> Recommendation Letter
+                                <input type="checkbox" id="inlineCheckbox1" value="option1" <?php if($finance['recom_letter']) echo 'checked';?>> Recommendation Letter
                             </label>
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox2" value="option2"> SOP
+                                <input type="checkbox" id="inlineCheckbox2" value="option2" <?php if($finance['sop']) echo 'checked';?>> SOP
                             </label>
                             <label class="checkbox"> 
-                                <input type="checkbox" id="inlineCheckbox3" value="option3"> Job Certificate
+                                <input type="checkbox" id="inlineCheckbox3" value="option3" <?php if($finance['study_job_certificate']) echo 'checked';?>> Job Certificate
                             </label>
                         </div>
                         <div class="col-lg-4">
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox1" value="option1"> Bank Solvency
+                                <input type="checkbox" id="inlineCheckbox1" value="option1" <?php if($finance['bank_solvency']) echo 'checked';?>> Bank Solvency
                             </label>
                             <label class="checkbox">
                                 <input type="checkbox" id="inlineCheckbox2" value="option2"> Bank statement
@@ -100,7 +117,8 @@
                         </div>
                         <div class="col-lg-4">
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox1" value="option1"> Other Files
+                                <input type="checkbox" id="inlineCheckbox1" value="option1" <?php if($finance_others[0]['other_certificate'])
+                                {echo 'checked';}else echo 'unchecked';?>> Other Files
                             </label>
                         </div>
                     </div>

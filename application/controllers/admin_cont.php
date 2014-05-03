@@ -14,6 +14,10 @@ class admin_cont extends CI_Controller {
     }
     public function applicantFile($id){
         $data['applicant'] = $this->user_model->applicant_info($id);
+        $data['edu'] = $this->user_model->getEducationInfo($id);
+        $data['edu_others'] = $this->user_model->getOtherEducationCertificate($id);
+        $data['finance'] = $this->user_model->get_financial_info($id);
+        $data['finance_others'] = $this->user_model->getOtherCertificate($id);
         $this->load->view('dashboard',$data);
     }
     public function applicantStatus($id){
