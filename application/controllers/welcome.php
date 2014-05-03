@@ -45,6 +45,7 @@ class Welcome extends CI_Controller
     {
         $data['financial'] = $this->user_model->get_financial_info($id);
         $data['other_certificate'] = $this->user_model->getOtherCertificate($id);
+        $data['bank_statement'] = $this->user_model->getBankStatement($id);
         $data['applicant'] = $this->user_model->applicant_info($id);
 //        echo "<pre>";
 //        print_r($data);
@@ -394,23 +395,43 @@ class Welcome extends CI_Controller
                 }
             }
 
-        if ($_FILES['bank_statement']['name']) {
-            //echo "dddd";exit;
-            $path = $_FILES['bank_statement']['name'];
-            $ext = pathinfo($path, PATHINFO_EXTENSION);
-            $name = "bank_statement_" . $_POST['applicant_id'];
-            if ($this->user_model->tempUploadFile('bank_statement', $name)) {
-                $data['financial'] = $this->user_model->get_financial_info($_POST['applicant_id']);
-                $imageName = 'image' . "_" . $name;
-                if ($data['financial']['bank_statement'] != '')
-                    $this->updateFile($_POST['applicant_id'], $data['financial']['bank_statement'], $imageName, $ext);
-                else
-                    $this->updateFile($_POST['applicant_id'], "", $imageName, $ext);
-                $_POST['bank_statement'] = $imageName . '.' . $ext;
-                //redirect("welcome/financial_info/".$_POST['applicant_id']);
-                //$_POST['image'] = $imageName;
+
+        if (count($_FILES['bank_statement']['name'])>0) {
+//            echo "<pre>";
+//            echo print_r($_FILES['bank_statement']);exit;
+//            echo "</pre>";
+//            $count = 0;
+            foreach ($_FILES['bank_statement']['name'] as $f => $name) {
+                $path = $name;
+                $ext = pathinfo($path, PATHINFO_EXTENSION);
+                $name = "bank_statement_" . $_POST['applicant_id'] . md5(rand());
+
+                if (move_uploaded_file($_FILES["bank_statement"]["tmp_name"][$f], "images/" . $_POST['applicant_id'] . "/" . $name . "." . $ext)) {
+                    $data['applicant_id'] = $_POST['applicant_id'];
+                    $data['bank_statement'] = $name . "." . $ext;
+                    $this->user_model->updateBankStatement($data);
+                }
+//                            $count++; // Number of successfully uploaded file
             }
         }
+
+//        if ($_FILES['bank_statement']['name']) {
+//            //echo "dddd";exit;
+//            $path = $_FILES['bank_statement']['name'];
+//            $ext = pathinfo($path, PATHINFO_EXTENSION);
+//            $name = "bank_statement_" . $_POST['applicant_id'];
+//            if ($this->user_model->tempUploadFile('bank_statement', $name)) {
+//                $data['financial'] = $this->user_model->get_financial_info($_POST['applicant_id']);
+//                $imageName = 'image' . "_" . $name;
+//                if ($data['financial']['bank_statement'] != '')
+//                    $this->updateFile($_POST['applicant_id'], $data['financial']['bank_statement'], $imageName, $ext);
+//                else
+//                    $this->updateFile($_POST['applicant_id'], "", $imageName, $ext);
+//                $_POST['bank_statement'] = $imageName . '.' . $ext;
+//                //redirect("welcome/financial_info/".$_POST['applicant_id']);
+//                //$_POST['image'] = $imageName;
+//            }
+//        }
 
 
         $this->user_model->update_financial_info();

@@ -137,11 +137,12 @@
                 <div class="form-group">
                     <label for="inputEmail" class="col-lg-4 control-label">Bank statement</label>
                     <div class="col-lg-5">
-                        <?php if($financial['bank_statement']) {?>
-                            <a href="<?php echo base_url('/images')."/".$financial['applicant_id']."/".$financial['bank_statement'];?>"><img src="<?php echo base_url('/images')."/".$financial['applicant_id']."/".$financial['bank_statement'];?>"
-                                                                                                                                            width="150" height="150" style="margin-top: 10px; padding: 5px;background: lightgray"></a>
-                        <?php }?>
-                        <input type="file" name="bank_statement">
+                        <?php if(count($bank_statement)>0)
+                            for($i=0;$i<count($bank_statement);$i++){?>
+                                <a href="<?php echo base_url('/images')."/".$financial['applicant_id']."/".$bank_statement[$i]['bank_statement'];?>"><img src="<?php echo base_url('/images')."/".$financial['applicant_id']."/".$bank_statement[$i]['bank_statement'];?>"
+                                                                                                                                                                width="150" height="150" style="margin-top: 10px; padding: 5px;background: lightgray"></a>
+                            <?php }?>
+                        <input type="file" name="bank_statement[]" multiple="multiple">
                     </div>
                 </div>
 

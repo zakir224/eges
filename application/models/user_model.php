@@ -318,6 +318,13 @@ class User_model extends CI_Model{
         $query = $this->db->query($sql);
     }
 
+    public function updateBankStatement($data) {
+        $id= $data['applicant_id'];
+        $name = $data['bank_statement'];
+        $sql = "INSERT INTO bank_statement (applicant_id, bank_statement) VALUES ( '$id', '$name');";
+        $query = $this->db->query($sql);
+    }
+
     public function updateOtherEducationCertificate($data) {
         $id= $data['applicant_id'];
         $name = $data['other_education'];
@@ -327,6 +334,11 @@ class User_model extends CI_Model{
 
     public function getOtherCertificate($id) {
         $query=  $this->db->get_where('other_certificate', array('applicant_id' => $id));
+        return $query->result_array();
+    }
+
+    public function getBankStatement($id) {
+        $query=  $this->db->get_where('bank_statement', array('applicant_id' => $id));
         return $query->result_array();
     }
 
