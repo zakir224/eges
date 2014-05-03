@@ -90,7 +90,8 @@
                         </div>
                         <div class="col-lg-4">
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox1" value="option1"> Other Papers
+                                <input type="checkbox" id="inlineCheckbox1" value="option1" <?php if(isset($edu_others[0]['other_edu_certificate']))
+                                {if(!empty($edu_others[0]['other_edu_certificate']))echo 'checked';}?>> Other Papers
                             </label>
                         </div>
                     </div>
@@ -112,13 +113,15 @@
                                 <input type="checkbox" id="inlineCheckbox1" value="option1" <?php if($finance['bank_solvency']) echo 'checked';?>> Bank Solvency
                             </label>
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox2" value="option2"> Bank statement
+                                <input type="checkbox" id="inlineCheckbox2" value="option2"
+                                   > Bank statement
                             </label>
                         </div>
                         <div class="col-lg-4">
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox1" value="option1" <?php if($finance_others[0]['other_certificate'])
-                                {echo 'checked';}else echo 'unchecked';?>> Other Files
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"
+                                    <?php if(isset($finance_others[0]['other_certificate']))
+                                    {if(!empty($finance_others[0]['other_certificate']))echo 'checked';}?>> Other Files
                             </label>
                         </div>
                     </div>

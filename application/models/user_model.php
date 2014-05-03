@@ -382,6 +382,10 @@ class User_model extends CI_Model{
         $this->db->delete('preference', array('applicant_id' => $id));
         $this->db->delete('ssc', array('applicant_id' => $id));
         $this->db->delete('target_study', array('applicant_id' => $id));
+        $this->db->delete('other_education', array('applicant_id' => $id));
+        $this->db->delete('other_certificate', array('applicant_id' => $id));
+        $this->db->delete('recom_letter', array('applicant_id' => $id));
+        $this->db->delete('bank_statement', array('applicant_id' => $id));
         //rmdir('images/'.$id);
         $dir = 'images/'.$id;
         $files = new RecursiveIteratorIterator(
