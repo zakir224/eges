@@ -378,6 +378,38 @@ class User_model extends CI_Model{
         $sql = "UPDATE applicant_status SET status='$s' WHERE applicant_id='$id'";
         $query = $this->db->query($sql);
     }
+
+    function exportCsv()
+    {
+        $output="";
+        $sql = mysql_query("select applicant_id,first_name,last_name from applicant");
+        $columns_total = mysql_num_fields($sql);
+
+// Get The Field Name
+
+        for ($i = 0; $i < $columns_total; $i++) {
+            $heading = mysql_field_name($sql, $i);
+            $output .= '"'.$heading.'",';
+        }
+        $output .="\n";
+
+// Get Records from the table
+
+        while ($row = mysql_fetch_array($sql)) {
+            for ($i = 0; $i < $columns_total; $i++) {
+                $output .='"'.$row["$i"].'",';
+            }
+            $output .="\n";
+        }
+
+// Download the file
+
+        $filename = "myFile.csv";
+        header('Content-type: application/csv');
+        header('Content-Disposition: attachment; filename='.$filename);
+
+        echo $output;
+    }
 }
 
 
