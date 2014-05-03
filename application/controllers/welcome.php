@@ -442,17 +442,24 @@ class Welcome extends CI_Controller
             $data['financial'] = $this->user_model->get_financial_info($id);
             $data['education'] = $this->user_model->getEducationInfo($id);
             $data['other_certificate'] = $this->user_model->getOtherCertificate($id);
+            $data['applicant'] = $this->user_model->applicant_info($id);
             $data['other_education'] = $this->user_model->getOtherEducationCertificate($id);
-            $data['images'] = array(0 => $data['financial']['recom_letter'], 1 => $data['financial']['study_job_certificate'],
-                2 => $data['financial']['sop'],
-                3 => $data['education']['ssc_certificate'],
-                4 => $data['education']['ssc_marksheet'],
-                5 => $data['education']['hsc_certificate'],
-                6 => $data['education']['hsc_marksheet'],
-                7 => $data['education']['b_certificate'],
-                8 => $data['education']['b_marksheet'],
-                9 => $data['education']['m_certificate'],
-                10 => $data['education']['m_marksheet']);
+            $data['images'] =
+                array(
+                0 => $data['applicant']['passport'],
+                1 => $data['applicant']['image'],
+                2 => $data['financial']['recom_letter'],
+                3 => $data['financial']['study_job_certificate'],
+                4 => $data['financial']['sop'],
+                5 => $data['education']['ssc_certificate'],
+                6 => $data['education']['ssc_marksheet'],
+                7 => $data['education']['hsc_certificate'],
+                8 => $data['education']['hsc_marksheet'],
+                9 => $data['education']['b_certificate'],
+                10 => $data['education']['b_marksheet'],
+                11 => $data['education']['m_certificate'],
+                12 => $data['education']['m_marksheet']);
+            $data['id']=$id;
 
             for ($i = 0; $i < count($data['other_certificate']); $i++) {
             array_push($data['images'], $data['other_certificate'][$i]['other_certificate']);
@@ -464,7 +471,7 @@ class Welcome extends CI_Controller
 
             $data['financial'] = $this->user_model->get_financial_info($id);
             ini_set('memory_limit','32M');
-            $html = $this->load->view('test', $data, true);
+            $html = $this->load->view('attachment', $data, true);
 
             $this->load->library('pdf');
             $pdf = $this->pdf->load();
