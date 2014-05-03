@@ -75,7 +75,7 @@
                                         <span class="glyphicon glyphicon-download"></span>
                                     </a>
 
-                                    <a href="<?php echo base_url('index.php/admin_cont/csv/')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="Download">
+                                    <a href="<?php echo base_url('index.php/admin_cont/csv/')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="CSV">
                                         <span class="glyphicon glyphicon-adjust"></span>
                                     </a>
                                 </p>

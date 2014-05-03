@@ -81,21 +81,21 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"> Recommendation Letter
                             </label>
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+                                <input type="checkbox" id="inlineCheckbox2" value="option2"> SOP
                             </label>
                             <label class="checkbox"> 
-                                <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+                                <input type="checkbox" id="inlineCheckbox3" value="option3"> Job Certificate
                             </label>
                         </div>
                         <div class="col-lg-4">
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"> Bank Solvency
                             </label>
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+                                <input type="checkbox" id="inlineCheckbox2" value="option2"> Bank statement
                             </label>
                         </div>
                         <div class="col-lg-4">
