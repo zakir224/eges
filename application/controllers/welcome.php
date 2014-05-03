@@ -128,11 +128,25 @@ class Welcome extends CI_Controller
                 $imageName = 'image' . "_" . $name;
                 $this->updateFile($_POST['applicant_id'], $data['applicant']['image'], $imageName, $ext);
                 $_POST['image'] = $imageName . '.' . $ext;
-                $this->user_model->update_applicant_info();
-                redirect("welcome/personal_info/" . $_POST['applicant_id']);
+                //$this->user_model->update_applicant_info();
+                //redirect("welcome/personal_info/" . $_POST['applicant_id']);
                 //$_POST['image'] = $imageName;
             }
-        } else {
+        } if ($_FILES['passport']['name']) {
+        $path = $_FILES['passport']['name'];
+        $ext = pathinfo($path, PATHINFO_EXTENSION);
+        $name = "passport_" . $_POST['applicant_id'];
+
+        if ($this->user_model->tempUploadFile('passport', $name)) {
+            $data['applicant'] = $this->user_model->applicant_info($_POST['applicant_id']);
+            $imageName = 'image' . "_" . $name;
+            $this->updateFile($_POST['applicant_id'], $data['applicant']['passport'], $imageName, $ext);
+            $_POST['passport'] = $imageName . '.' . $ext;
+            $this->user_model->update_applicant_info();
+            redirect("welcome/personal_info/" . $_POST['applicant_id']);
+            //$_POST['image'] = $imageName;
+        }
+    } else {
             $this->user_model->update_applicant_info();
             redirect("welcome/personal_info/" . $_POST['applicant_id']);
         }

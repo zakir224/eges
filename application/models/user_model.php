@@ -34,7 +34,7 @@ class User_model extends CI_Model{
         $image = $_POST['image'];
 
         $sql = "INSERT INTO applicant (id, applicant_id, first_name, last_name,
-         password, father_name, mother_name, d_o_b, present_add, parmanent_add,
+         passport, father_name, mother_name, d_o_b, present_add, parmanent_add,
          email, mobile, guardian_mobile, religion, passport_no, gender, national_id,
          ielts_toefl_score, gre_gmat_score, image) VALUES
          (NULL, '$id', '$fn', '$ln', '', '', '', '$dob', '', '', '$email', '$mobile', '', '', '', '$gender', '', '', '', '$image');";

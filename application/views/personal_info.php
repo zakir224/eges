@@ -148,10 +148,23 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail" class="col-lg-3 control-label">Take A Photo</label>
+                            <label for="inputEmail" class="col-lg-3 control-label">Change photo</label>
 
                             <div class="col-lg-9">
                                 <input type="file" name="image">
+                            </div>
+                            <br>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail" class="col-lg-3 control-label">Passports</label>
+
+                            <div class="col-lg-9">
+                                <?php if($applicant['passport']) {?>
+                                    <a href="<?php echo base_url('/images')."/".$applicant['applicant_id']."/".$applicant['passport'];?>"><img src="<?php echo base_url('/images')."/".$applicant['applicant_id']."/".$applicant['passport'];?>"
+                                                                                                                                                      width="150" height="150" style="margin-top: 10px; padding: 5px;background: lightgray"></a>
+                                <?php }?>
+                                <input type="file" name="passport">
                             </div>
                             <br>
                         </div>
