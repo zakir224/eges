@@ -86,7 +86,7 @@
                             <label class="checkbox">
                                 <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
                             </label>
-                            <label class="checkbox">
+                            <label class="checkbox"> 
                                 <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
                             </label>
                         </div>
