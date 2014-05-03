@@ -18,6 +18,8 @@ class admin_cont extends CI_Controller {
         $data['edu_others'] = $this->user_model->getOtherEducationCertificate($id);
         $data['finance'] = $this->user_model->get_financial_info($id);
         $data['finance_others'] = $this->user_model->getOtherCertificate($id);
+        $data['recom'] = $this->user_model->getRecomLetter($id);
+        $data['statement'] = $this->user_model->getBankStatement($id);
         $this->load->view('dashboard',$data);
     }
     public function applicantStatus($id){

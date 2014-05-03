@@ -99,7 +99,9 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <label class="checkbox">
-                                <input type="checkbox" id="inlineCheckbox1" value="option1" <?php if($finance['recom_letter']) echo 'checked';?>> Recommendation Letter
+                                <input type="checkbox" id="inlineCheckbox1" value="option1"
+                                    <?php if(isset($recom[0]['recom_letter']))
+                                    {if(!empty($recom[0]['recom_letter']))echo 'checked';}?>> Recommendation Letter
                             </label>
                             <label class="checkbox">
                                 <input type="checkbox" id="inlineCheckbox2" value="option2" <?php if($finance['sop']) echo 'checked';?>> SOP
@@ -114,7 +116,8 @@
                             </label>
                             <label class="checkbox">
                                 <input type="checkbox" id="inlineCheckbox2" value="option2"
-                                   > Bank statement
+                                    <?php if(isset($statement[0]['bank_statement']))
+                                    {if(!empty($statement[0]['bank_statement']))echo 'checked';}?>> Bank statement
                             </label>
                         </div>
                         <div class="col-lg-4">
