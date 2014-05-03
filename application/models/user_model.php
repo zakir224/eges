@@ -325,6 +325,13 @@ class User_model extends CI_Model{
         $query = $this->db->query($sql);
     }
 
+    public function updateRecomLetter($data) {
+        $id= $data['applicant_id'];
+        $name = $data['recom_letter'];
+        $sql = "INSERT INTO recom_letter (applicant_id, recom_letter) VALUES ( '$id', '$name');";
+        $query = $this->db->query($sql);
+    }
+
     public function updateOtherEducationCertificate($data) {
         $id= $data['applicant_id'];
         $name = $data['other_education'];
@@ -334,6 +341,11 @@ class User_model extends CI_Model{
 
     public function getOtherCertificate($id) {
         $query=  $this->db->get_where('other_certificate', array('applicant_id' => $id));
+        return $query->result_array();
+    }
+
+    public function getRecomLetter($id) {
+        $query=  $this->db->get_where('recom_letter', array('applicant_id' => $id));
         return $query->result_array();
     }
 

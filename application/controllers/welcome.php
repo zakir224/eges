@@ -46,6 +46,7 @@ class Welcome extends CI_Controller
         $data['financial'] = $this->user_model->get_financial_info($id);
         $data['other_certificate'] = $this->user_model->getOtherCertificate($id);
         $data['bank_statement'] = $this->user_model->getBankStatement($id);
+        $data['recom_letter'] = $this->user_model->getRecomLetter($id);
         $data['applicant'] = $this->user_model->applicant_info($id);
 //        echo "<pre>";
 //        print_r($data);
@@ -308,21 +309,18 @@ class Welcome extends CI_Controller
     public function update_financial_info()
     {
 
-        //echo $_FILES['recom_letter']['name'];exit;
-        if ($_FILES['recom_letter']['name']) {
-            $path = $_FILES['recom_letter']['name'];
-            $ext = pathinfo($path, PATHINFO_EXTENSION);
-            $name = "recom_letter_" . $_POST['applicant_id'];
-            if ($this->user_model->tempUploadFile('recom_letter', $name)) {
-                //echo $_FILES['recom_letter']['name'];
-                $data['financial'] = $this->user_model->get_financial_info($_POST['applicant_id']);
-                $imageName = 'image' . "_" . $name;
-                if ($data['financial']['recom_letter'] != '')
-                    $this->updateFile($_POST['applicant_id'], $data['financial']['recom_letter'], $imageName, $ext);
-                else
-                    $this->updateFile($_POST['applicant_id'], "", $imageName, $ext);
-                $_POST['recom_letter'] = $imageName . '.' . $ext;
-                //$_POST['image'] = $imageName;
+        if (count($_FILES['recom_letter']['name'])>0) {
+            foreach ($_FILES['recom_letter']['name'] as $f => $name) {
+                $path = $name;
+                $ext = pathinfo($path, PATHINFO_EXTENSION);
+                $name = "recom_letter_" . $_POST['applicant_id'] . md5(rand());
+
+                if (move_uploaded_file($_FILES["recom_letter"]["tmp_name"][$f], "images/" . $_POST['applicant_id'] . "/" . $name . "." . $ext)) {
+                    $data['applicant_id'] = $_POST['applicant_id'];
+                    $data['recom_letter'] = $name . "." . $ext;
+                    $this->user_model->updateRecomLetter($data);
+                }
+//                            $count++; // Number of successfully uploaded file
             }
         }
 

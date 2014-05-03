@@ -64,11 +64,12 @@
                     <div class="form-group">
                         <label for="inputEmail" class="col-lg-4 control-label">Recom Letter </label>
                         <div class="col-lg-5">
-                            <?php if($financial['recom_letter']) {?>
-                                <a href="<?php echo base_url('/images')."/".$financial['applicant_id']."/".$financial['recom_letter'];?>"><img src="<?php echo base_url('/images')."/".$financial['applicant_id']."/".$financial['recom_letter'];?>"
-                                                                                                                          width="150" height="150" style="margin-top: 10px; padding: 5px;background: lightgray"></a>
-                            <?php }?>
-                            <input type="file" name="recom_letter">
+                            <?php if(count($recom_letter)>0)
+                                for($i=0;$i<count($recom_letter);$i++){?>
+                                    <a href="<?php echo base_url('/images')."/".$financial['applicant_id']."/".$recom_letter[$i]['recom_letter'];?>"><img src="<?php echo base_url('/images')."/".$financial['applicant_id']."/".$recom_letter[$i]['recom_letter'];?>"
+                                                                                                                                                              width="150" height="150" style="margin-top: 10px; padding: 5px;background: lightgray"></a>
+                                <?php }?>
+                            <input type="file" name="recom_letter[]" multiple="multiple">
                         </div>
                     </div>
 
