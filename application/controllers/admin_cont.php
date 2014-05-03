@@ -12,6 +12,10 @@ class admin_cont extends CI_Controller {
         $data['app_status'] = $this->user_model->getApplicantState();
         $this->load->view('admin_home',$data);
     }
+    public function applicantFile($id){
+        $data['applicant'] = $this->user_model->applicant_info($id);
+        $this->load->view('dashboard',$data);
+    }
     public function applicantStatus($id){
         $data['applicant'] = $this->user_model->applicant_info($id);
         $this->load->view('change_status',$data);

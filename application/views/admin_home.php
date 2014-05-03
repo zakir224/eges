@@ -55,8 +55,8 @@
                             <td>
                                 <p>
 
-                                    <a href="<?php echo base_url('index.php/admin_cont/personal_info')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top"
-                                       title="Applicant Details" >
+                                    <a href="<?php echo base_url('index.php/admin_cont/applicantFile')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top"
+                                       title="Applicant Attachment" >
                                         <span class="glyphicon glyphicon-book" ></span>
                                     </a>
                                     <a href="<?php echo base_url('index.php/admin_cont/applicantStatus')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Update Status">
