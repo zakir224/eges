@@ -337,5 +337,8 @@ class admin_cont extends CI_Controller {
         $pdf->Output();
     }
 
+    function csv(){
+        $this->user_model->exportCsv();
+    }
 
 }

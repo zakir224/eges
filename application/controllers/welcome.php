@@ -476,9 +476,6 @@ class Welcome extends CI_Controller
     }
 
 
-    function csv(){
-            $this->user_model->exportCsv();
-    }
 
 }
 
