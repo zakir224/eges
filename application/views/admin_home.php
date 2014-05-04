@@ -69,7 +69,10 @@
                                         <span class="glyphicon glyphicon-remove-sign" ></span>
                                     </a>
 
-
+                                    <a href="<?php echo base_url('index.php/admin_cont/applicantCv')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top"
+                                       title="Applicant CV" >
+                                        <span class="glyphicon glyphicon-user" ></span>
+                                    </a>
 
                                     <a href="<?php echo base_url('index.php/welcome/downloadAttachment/')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="Download">
                                         <span class="glyphicon glyphicon-download"></span>

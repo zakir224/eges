@@ -22,6 +22,10 @@ class admin_cont extends CI_Controller {
         $data['statement'] = $this->user_model->getBankStatement($id);
         $this->load->view('dashboard',$data);
     }
+    public function applicantCv($id){
+        $data['applicant'] = $this->user_model->applicant_info($id);
+        $this->load->view('applicant_cv',$data);
+    }
     public function applicantStatus($id){
         $data['applicant'] = $this->user_model->applicant_info($id);
         $this->load->view('change_status',$data);
