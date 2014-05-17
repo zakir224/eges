@@ -97,7 +97,7 @@
     function show_me()
     {
         var x;
-        var r=confirm("Are You Sure ! Pleas press OK");
+        var r=confirm("Are You Sure to delete? Cancel to terminate");
         if (r==true)
         {
             return true;
