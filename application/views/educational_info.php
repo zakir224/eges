@@ -35,14 +35,17 @@
                         <li  class="active"><a href="<?php echo base_url('index.php/welcome/education_info')."/".$educational['applicant_id']?>"><span class="glyphicon glyphicon-book"></span>&nbsp;Educational Information</a></li>
                         <li><a href="<?php echo base_url('index.php/welcome/preferences')."/".$educational['applicant_id']?>"><span class="glyphicon glyphicon-tags"></span>&nbsp; Preference</a></li>
                     </ul>
-                    <?php if($applicant['image']) {?>
-                        <a href="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$applicant['image'];?>"><img src="<?php echo base_url('/images')."/".$educational['applicant_id']."/".$applicant['image'];?>"
-                                                                                                           width="150" height="150" style="margin-top: 10px; padding: 5px;background: lightgray"></a>
-                    <?php } else { ?>
-                        <img src="<?php echo base_url('/images/applicant')."/"."default_image";?>" width="150" height="150" style="margin-top: 10px;">
-                    <?php } ?>
-                    <h3 style="display: inline;"><?php echo $applicant['first_name']." ".$applicant['last_name']?></h3>
+                    <p class="navbar-text navbar-right" style="font-size: 10pt;">Signed in for <span class="alert-danger"><?php echo $applicant['first_name']." ".$applicant['last_name']?></span></p>
+
                     <hr>
+                    <?php
+                    if($s)
+                        if($s==TRUE) { ?>
+                            <div class="alert alert-success alert-dismissable">
+                                <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
+                                <strong>Success!</strong> Update successful.
+                            </div>
+                        <?php } ?>
 
 
                     <div class="col-lg-6" >
@@ -327,6 +330,6 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+<script src="<?php echo base_url('/')?>js/bootstrap.min.js"></script>
 </body>
 </html>

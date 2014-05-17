@@ -32,14 +32,17 @@
                     <li><a href="<?php echo base_url('index.php/welcome/education_info')."/".$financial['applicant_id']?>"><span class="glyphicon glyphicon-book"></span>&nbsp;Educational Information</a></li>
                     <li><a href="<?php echo base_url('index.php/welcome/preferences')."/".$financial['applicant_id']?>"><span class="glyphicon glyphicon-tags"></span>&nbsp; Preference</a></li>
                 </ul>
-                <?php if($applicant['image']) {?>
-                    <a href="<?php echo base_url('/images')."/".$financial['applicant_id']."/".$applicant['image'];?>"><img src="<?php echo base_url('/images')."/".$financial['applicant_id']."/".$applicant['image'];?>"
-                                                                                                       width="150" height="150" style="margin-top: 10px; padding: 5px;background: lightgray"></a>
-                <?php } else { ?>
-                    <img src="<?php echo base_url('/images/applicant')."/"."default_image";?>" width="150" height="150" style="margin-top: 10px;">
-                <?php } ?>
-                <h3 style="display: inline;"><?php echo $applicant['first_name']." ".$applicant['last_name']?></h3>
+                <p class="navbar-text navbar-right" style="font-size: 10pt;">Signed in for <span class="alert-danger"><?php echo $applicant['first_name']." ".$applicant['last_name']?></span></p>
+
                 <hr>
+                <?php
+                if($s)
+                    if($s==TRUE) { ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
+                            <strong>Success!</strong> Update successful.
+                        </div>
+                    <?php } ?>
 
                     <div class="form-group">
                         <label for="inputEmail" class="col-lg-4 control-label">Yearly Expense</label>
@@ -62,7 +65,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail" class="col-lg-4 control-label">Recom Letter </label>
+                        <label for="inputEmail" class="col-lg-4 control-label">Recommendation Letter </label>
                         <div class="col-lg-5">
                             <?php if(count($recom_letter)>0)
                                 for($i=0;$i<count($recom_letter);$i++){?>
@@ -74,7 +77,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inputEmail" class="col-lg-4 control-label">sop</label>
+                        <label for="inputEmail" class="col-lg-4 control-label">Statement of Purpose</label>
                         <div class="col-lg-5">
                             <?php if($financial['sop']) {?>
                                 <a href="<?php echo base_url('/images')."/".$financial['applicant_id']."/".$financial['sop'];?>"><img src="<?php echo base_url('/images')."/".$financial['applicant_id']."/".$financial['sop'];?>"
@@ -95,7 +98,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inputEmail" class="col-lg-4 control-label">Others Certificate</label>
+                        <label for="inputEmail" class="col-lg-4 control-label">Other Certificates</label>
                         <div class="col-lg-5">
                             <?php if(count($other_certificate)>0)
                                     for($i=0;$i<count($other_certificate);$i++){?>
@@ -162,6 +165,6 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+<script src="<?php echo base_url('/')?>js/bootstrap.min.js"></script>
 </body>
 </html>

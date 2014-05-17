@@ -18,6 +18,13 @@ class Welcome extends CI_Controller
      * map to /index.php/welcome/<method_name>
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
+
+    public function __construct() {
+        parent::__construct();
+        $this->load->helper('utility');
+        $this->load->view('message');
+    }
+
     public function index()
     {
         $this->home();
@@ -26,18 +33,14 @@ class Welcome extends CI_Controller
     public function home()
     {
         $data['applicant'] = $this->user_model->getApplicantList();
-//        echo "<pre>";
-//            print_r($data);
-//        echo "</pre>";
         $this->load->view('home', $data);
     }
 
     public function personal_info($id)
     {
         $data['applicant'] = $this->user_model->applicant_info($id);
-//        echo "<pre>";
-//        print_r($data);
-//        echo "</pre>";
+        $data['s'] = $this->session->userdata('s');
+        $this->session->set_userdata('s',0);
         $this->load->view('personal_info', $data);
     }
 
@@ -48,10 +51,8 @@ class Welcome extends CI_Controller
         $data['bank_statement'] = $this->user_model->getBankStatement($id);
         $data['recom_letter'] = $this->user_model->getRecomLetter($id);
         $data['applicant'] = $this->user_model->applicant_info($id);
-//        echo "<pre>";
-//        print_r($data);
-//        exit;
-//        echo "</pre>";
+        $data['s'] = $this->session->userdata('s');
+        $this->session->set_userdata('s',0);
         $this->load->view('financial_info', $data);
     }
 
@@ -60,10 +61,8 @@ class Welcome extends CI_Controller
         $data['educational'] = $this->user_model->getEducationInfo($id);
         $data['applicant'] = $this->user_model->applicant_info($id);
         $data['other_education'] = $this->user_model->getOtherEducationCertificate($id);
-        //$data['preference'] = $this->user_model->getPreference($id);
-//        echo "<pre>";
-//        print_r($data);
-//        echo "</pre>";
+        $data['s'] = $this->session->userdata('s');
+        $this->session->set_userdata('s',0);
         $this->load->view('educational_info', $data);
     }
 
@@ -71,9 +70,6 @@ class Welcome extends CI_Controller
     {
         $data['preference'] = $this->user_model->getPreference($id);
         $data['applicant'] = $this->user_model->applicant_info($id);
-//        echo "<pre>";
-//        print_r($data);
-//        echo "</pre>";
         $this->load->view('preference', $data);
     }
 
@@ -150,6 +146,7 @@ class Welcome extends CI_Controller
         }
     } else {
             $this->user_model->update_applicant_info();
+            $this->session->set_userdata('s',1);
             redirect("welcome/personal_info/" . $_POST['applicant_id']);
         }
     }
@@ -302,6 +299,7 @@ class Welcome extends CI_Controller
             }
         }
         $this->user_model->update_educational_info();
+        $this->session->set_userdata('s',1);
         redirect("welcome/education_info/" . $_POST['applicant_id']);
 
     }
@@ -413,26 +411,9 @@ class Welcome extends CI_Controller
             }
         }
 
-//        if ($_FILES['bank_statement']['name']) {
-//            //echo "dddd";exit;
-//            $path = $_FILES['bank_statement']['name'];
-//            $ext = pathinfo($path, PATHINFO_EXTENSION);
-//            $name = "bank_statement_" . $_POST['applicant_id'];
-//            if ($this->user_model->tempUploadFile('bank_statement', $name)) {
-//                $data['financial'] = $this->user_model->get_financial_info($_POST['applicant_id']);
-//                $imageName = 'image' . "_" . $name;
-//                if ($data['financial']['bank_statement'] != '')
-//                    $this->updateFile($_POST['applicant_id'], $data['financial']['bank_statement'], $imageName, $ext);
-//                else
-//                    $this->updateFile($_POST['applicant_id'], "", $imageName, $ext);
-//                $_POST['bank_statement'] = $imageName . '.' . $ext;
-//                //redirect("welcome/financial_info/".$_POST['applicant_id']);
-//                //$_POST['image'] = $imageName;
-//            }
-//        }
-
 
         $this->user_model->update_financial_info();
+        $this->session->set_userdata('s',1);
         redirect("welcome/financial_info/" . $_POST['applicant_id']);
     }
 
