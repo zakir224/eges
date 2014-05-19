@@ -31,7 +31,6 @@
             <div class="col-lg-9">
                 <ul class="list-unstyled col-lg-12" >
                     &nbsp;
-
                     <h4>Personal Information</h4>
                     <hr>
                     <li><span style="font-size: medium">Full Name  :</span>
