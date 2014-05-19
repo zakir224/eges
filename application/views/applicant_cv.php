@@ -101,7 +101,6 @@
             </div>
             &nbsp;&nbsp;
             <div class="col-lg-3">
-
                 <?php if($applicant['image']) {?>
                     <a href="<?php echo base_url('/images')."/".$applicant['applicant_id']."/".$applicant['image'];?>"><img src="<?php echo base_url('/images')."/".$applicant['applicant_id']."/".$applicant['image'];?>" width="150"></a>
                 <?php }?>
