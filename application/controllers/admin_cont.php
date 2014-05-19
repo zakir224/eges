@@ -41,7 +41,6 @@ class admin_cont extends CI_Controller {
         $data['applicant'] = $this->user_model->applicant_info($id);
         $this->load->view('change_status',$data);
     }
-
     public function delete_applicant($id){
         $this->user_model->delete_id($id);
         $this->home();
