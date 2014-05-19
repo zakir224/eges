@@ -34,22 +34,28 @@
 
                     <h4>Personal Information</h4>
                     <hr>
-                    <li><span style="font-size: medium">Full Name:</span>   <?php echo $applicant['first_name']." ".$applicant['last_name'];?></li>
+                    <li><span style="font-size: medium">Full Name  :</span>
+                        &emsp;&emsp;&emsp;&emsp;<?php echo $applicant['first_name']." ".$applicant['last_name'];?></li>
                     &nbsp;
 
-                    <li><span style="font-size: medium">Father's Name:</span>   <?php echo $applicant['father_name'];?></li>
+                    <li><span style="font-size: medium">Father's Name  :</span>
+                        &emsp;&emsp;&emsp;&emsp;<?php echo $applicant['father_name'];?></li>
                     &nbsp;
-                    <li><span style="font-size: medium">Mother's Name:</span>   <?php echo $applicant['mother_name'];?></li>
+                    <li><span style="font-size: medium">Mother's Name  :</span>
+                        &emsp;&emsp;&emsp;&emsp;<?php echo $applicant['mother_name'];?></li>
                     &nbsp;
-                    <li><span style="font-size: medium">Date Of Birth:</span>   <?php echo $applicant['d_o_b'];?></li>
+                    <li><span style="font-size: medium">Date Of Birth  :</span>
+                        &emsp;&emsp;&emsp;&emsp;<?php echo $applicant['d_o_b'];?></li>
                     &nbsp;
-                    <li><span style="font-size: medium">Present Address:</span>   <?php echo $applicant['present_add'];?></li>
+                    <li><span style="font-size: medium">Present Address  :</span>
+                        &emsp;&emsp;&emsp;&emsp;<?php echo $applicant['present_add'];?></li>
                     &nbsp;
-                    <li><span style="font-size: medium">Permanent Address:</span>   <?php echo $applicant['parmanent_add'];?></li>
+                    <li><span style="font-size: medium">Permanent Address  :</span>
+                        &emsp;&emsp;&emsp;&emsp;<?php echo $applicant['parmanent_add'];?></li>
                     &nbsp;
-                    <li><span style="font-size: medium">E-mail:</span> <a href="#">    <?php echo $applicant['email'];?></a></li>
+                    <li><span style="font-size: medium">E-mail  :</span> <a href="#">&emsp;&emsp;&emsp;&emsp;<?php echo $applicant['email'];?></a></li>
                     &nbsp;
-                    <li><span style="font-size: medium;">Mobile Number:</span>    <?php echo $applicant['mobile'];?></li>
+                    <li><span style="font-size: medium;">Mobile Number  :</span>&emsp;&emsp;&emsp;&emsp;<?php echo $applicant['mobile'];?></li>
                     &nbsp;
                     <li>
                         <h4>Educational Information</h4>
@@ -94,6 +100,26 @@
 
                         </table>
                     </li>
+                    <li>
+                        &nbsp;
+                        <h4>Financial Information</h4>
+                        <hr>
+                    <li><span style="font-size: medium">Yearly Expense  :</span>&emsp;&emsp;&emsp;&emsp;  <?php echo "zdsczcz";?></li>
+                    &nbsp;
+
+                    <li><span style="font-size: medium">Relative Information  :</span>&emsp;&emsp;&emsp;&emsp;<?php echo "mhbjjj"?></li>
+                    &nbsp;
+                    <li><span style="font-size: medium">Relative Support  :</span>&emsp;&emsp;&emsp;&emsp;<?php echo "zdsczcz";?></li>
+                    &nbsp;
+
+                    <li><span style="font-size: medium">Sponsor Information  :</span>&emsp;&emsp;&emsp;&emsp;<?php echo "mhbjjj"?></li>
+                    &nbsp;
+                    <li><span style="font-size: medium">Bank Name  :</span>&emsp;&emsp;&emsp;&emsp;<?php echo "zdsczcz";?></li>
+                    &nbsp;
+
+                    <li><span style="font-size: medium">Bank Amount  :</span>&emsp;&emsp;&emsp;&emsp;<?php echo "mhbjjj"?></li>
+                    &nbsp;
+
                 </ul>
 
 
