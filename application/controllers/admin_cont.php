@@ -25,7 +25,8 @@ class admin_cont extends CI_Controller {
     public function applicantCv($id){
         $data['applicant'] = $this->user_model->get_applicant_info($id);
         $data['edu'] = $this->user_model->getEducationInfo($id);
-        //$html = $this->load->view('attachment', $data, true);
+        //$this->load->view('applicant_cv',$data);
+        $html = $this->load->view('attachment', $data, true);
         $pdfFilePath = $id."_".$data['applicant']['first_name'].".pdf";
         $html = $this->load->view('applicant_cv',$data,true);
         $this->load->library('pdf');

@@ -1,147 +1,200 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
 
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Resume | First Last</title>
     <!-- Bootstrap -->
-    <link href="<?php echo base_url('/')?>css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo base_url('/')?>css/bootstrap.css" rel="stylesheet">
-    <link href="<?php echo base_url('/')?>css/bootstrap.theme" rel="stylesheet">
-    <link href="<?php echo base_url('/')?>css/style.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
 
-    <script src="js/muJs.js"></script>
-    <![endif]-->
+    <meta name="robots" content="noindex, nofollow">
+    <style type="text/css" media="all">
+        html{
+            background-color:#FFF;
+            padding:0 1em;
+        }
+        body {
+            background-color:#FFF;
+            font-family:"Trebuchet MS";
+            padding:1em;
+            margin:1em auto;
+            max-width: 50em;
+        }
+        #address{
+            height:7em;
+            width:48em;
+            padding:1em;
+        }
+        #address div{
+            width:16em;
+            float:left;
+        }
+        #address h3{
+            border-bottom: none;
+            font-variant: small-caps;
+            margin-top: 0;
+        }
+        .date {
+            float:right;
+            font-size:.8em;
+            margin-top:.4em;
+            text-align:right;
+        }
+        abbr, acronym{
+            border-bottom:1px dotted #333;
+            cursor:help;
+        }
+        address{
+            font-style:italic;
+            color:#333;
+            font-size:.9em;
+        }
+        .content{
+            width:30em;
+            margin:0 0 0 16em;
+        }
+        .section{
+            border-top:1px solid #ccc;
+            margin:1em 0;
+            padding:1em;
+        }
+        ul{
+            padding-left:.5em;
+            margin-left:.5em;
+        }
+        h1{
+            margin:1em 0 1em 9.5em;
+            font-size:1.75em;
+        }
+        h2 {
+            width:14em;
+            float:left;
+            font-size:1em;
+            font-variant: small-caps;
+            letter-spacing: .06em;
+        }
+        h3 {margin-bottom: 0;}
+    </style>
+    <style type="text/css" media="print">
+        body {
+            background-color:#FFF;
+            border-width:0 0 0 0;
+            margin:0;
+            width:100%
+        }
+    </style>
+
 </head>
 <body>
+<h1>Applicant CV</h1>
 
-<?php include_once('header_admin.php');?>
+<div id="address">
 
+    <div id="" style="margin-left: 150px">
+        <h3><?php echo $applicant['first_name']." ".$applicant['last_name'];?></h3>
+        <a href="#"><?php echo $applicant['email'];?></a> <br>
+        <?php echo $applicant['mobile'];?><br>
+        <?php echo $applicant['present_add'];?>
+    </div>
+    <div >
+        <?php if($applicant['image']) {?>
+            <a href="<?php echo base_url('/images')."/".$applicant['applicant_id']."/".$applicant['image'];?>">
+                <img style="margin-top: 10px;" src="<?php echo base_url('/images')."/".$applicant['applicant_id']."/".$applicant['image'];?>" width="120"></a>
+        <?php }?>
+    </div>
 
-<section class="container">
-    <div class="row">
+</div>
 
-        <div class="col-lg-12 well"  style="background: #ffffff;">
+<div class="section">
+    <h2>Personal Information</h2>
+    <div class="content" style="margin-top: 35px;">
 
-            <div class="col-lg-9">
-                <ul class="list-unstyled col-lg-12" >
-                    &nbsp;
-                    <h4>Personal Information</h4>
-                    <hr>
-                    <li><span style="font-size: medium">Full Name  :</span>
-                        &emsp;&emsp;&emsp;&emsp;<?php echo $applicant['first_name']." ".$applicant['last_name'];?></li>
-                    &nbsp;
+        <label>Father's Name  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal;"><?php echo $applicant['father_name'];?></span><br>
+        <label>Mother's Name  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo $applicant['mother_name'];?></span><br>
+        <label>Date Of Birth  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo $applicant['d_o_b'];?></span><br>
+        <label>Permanent Address  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo $applicant['parmanent_add'];?></span><br>
+        <label>Guardian Mobile  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo "012312323";?></span><br>
+        <label>Religion  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo "Muslim";?></span><br>
+        <label>Passport No  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo "4535-453-34534";?></span><br>
+        <label>National ID  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo "34234-234-23432";?></span><br>
 
-                    <li><span style="font-size: medium">Father's Name  :</span>
-                        &emsp;&emsp;&emsp;&emsp;<?php echo $applicant['father_name'];?></li>
-                    &nbsp;
-                    <li><span style="font-size: medium">Mother's Name  :</span>
-                        &emsp;&emsp;&emsp;&emsp;<?php echo $applicant['mother_name'];?></li>
-                    &nbsp;
-                    <li><span style="font-size: medium">Date Of Birth  :</span>
-                        &emsp;&emsp;&emsp;&emsp;<?php echo $applicant['d_o_b'];?></li>
-                    &nbsp;
-                    <li><span style="font-size: medium">Present Address  :</span>
-                        &emsp;&emsp;&emsp;&emsp;<?php echo $applicant['present_add'];?></li>
-                    &nbsp;
-                    <li><span style="font-size: medium">Permanent Address  :</span>
-                        &emsp;&emsp;&emsp;&emsp;<?php echo $applicant['parmanent_add'];?></li>
-                    &nbsp;
-                    <li><span style="font-size: medium">E-mail  :</span> <a href="#">&emsp;&emsp;&emsp;&emsp;<?php echo $applicant['email'];?></a></li>
-                    &nbsp;
-                    <li><span style="font-size: medium;">Mobile Number  :</span>&emsp;&emsp;&emsp;&emsp;<?php echo $applicant['mobile'];?></li>
-                    &nbsp;
-                    <li>
-                        <h4>Educational Information</h4>
-                        <hr>
-                        <table class="table table-striped" border="1" width="100%" style="text-align: center">
-                            <tr>
-                                <th width="25%" style="text-align: center">Education Name</th>
-                                <th width="15%" style="text-align: center">Result</th>
-                                <th style="text-align: center">Institute Name</th>
-                                <th width="15%" style="text-align: center">Passing Year</th>
-                            </tr>
+        <label>IELTS Score  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo "7.5";?></span><br>
+        <label>GRE  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo "5";?></span><br>
+    </div>
+</div>
 
-                            <tr>
-                                <td >Secondary/Equivalent level</td>
-                                <td ><?php echo $edu["ssc_gpa_result"]?></td>
-                                <td><?php echo $edu["ssc_institution"]?></td>
-                                <td ><?php echo $edu["ssc_passing_year"]?></td>
+<div class="section">
+    <h2>Educational Information</h2>
+    <div class="content" style="margin-top: 35px; " >
 
-                            </tr>
-                            <tr>
-                                <td>Intermediate/equivalent level</td>
-                                <td >4.90</td>
-                                <td>Bir Shreshtha Noor Mohammad Rifle Public School and College</td>
-                                <td >2009</td>
+        <table class="" border="1" style="text-align: center; font-size: 13px; width: 100%">
+            <tr>
+                <th width="25%" style="text-align: center">Education Name</th>
+                <th width="15%" style="text-align: center">Result</th>
+                <th style="text-align: center">Institute Name</th>
+                <th width="15%" style="text-align: center">Passing Year</th>
+            </tr>
 
-                            </tr>
+            <tr>
+                <td >Secondary/Equivalent level</td>
+                <td ><?php echo $edu["ssc_gpa_result"]?></td>
+                <td><?php echo $edu["ssc_institution"]?></td>
+                <td ><?php echo $edu["ssc_passing_year"]?></td>
 
-                            <tr>
-                                <td >Bachelors</td>
-                                <td >3.85</td>
-                                <td>United International University</td>
-                                <td >2014</td>
+            </tr>
+            <tr>
+                <td>Intermediate/equivalent level</td>
+                <td >4.90</td>
+                <td>Bir Shreshtha Noor Mohammad Rifle Public School and College</td>
+                <td >2009</td>
 
-                            </tr>
-                            <tr>
-                                <td >Masters</td>
-                                <td >3.85</td>
-                                <td>United International University</td>
-                                <td>2014</td>
+            </tr>
 
-                            </tr>
+            <tr>
+                <td >Bachelors</td>
+                <td >3.85</td>
+                <td>United International University</td>
+                <td >2014</td>
 
-                        </table>
-                    </li>
-                    <li>
-                        &nbsp;
-                        <h4>Financial Information</h4>
-                        <hr>
-                    <li><span style="font-size: medium">Yearly Expense  :</span>&emsp;&emsp;&emsp;&emsp;  <?php echo "zdsczcz";?></li>
-                    &nbsp;
+            </tr>
+            <tr>
+                <td >Masters</td>
+                <td >3.85</td>
+                <td>United International University</td>
+                <td>2014</td>
 
-                    <li><span style="font-size: medium">Relative Information  :</span>&emsp;&emsp;&emsp;&emsp;<?php echo "mhbjjj"?></li>
-                    &nbsp;
-                    <li><span style="font-size: medium">Relative Support  :</span>&emsp;&emsp;&emsp;&emsp;<?php echo "zdsczcz";?></li>
-                    &nbsp;
+            </tr>
 
-                    <li><span style="font-size: medium">Sponsor Information  :</span>&emsp;&emsp;&emsp;&emsp;<?php echo "mhbjjj"?></li>
-                    &nbsp;
-                    <li><span style="font-size: medium">Bank Name  :</span>&emsp;&emsp;&emsp;&emsp;<?php echo "zdsczcz";?></li>
-                    &nbsp;
+        </table>
+    </div>
+</div>
 
-                    <li><span style="font-size: medium">Bank Amount  :</span>&emsp;&emsp;&emsp;&emsp;<?php echo "mhbjjj"?></li>
-                    &nbsp;
-
-                </ul>
-
-
-
-            </div>
-            &nbsp;&nbsp;
-            <div class="col-lg-3">
-                <?php if($applicant['image']) {?>
-                    <a href="<?php echo base_url('/images')."/".$applicant['applicant_id']."/".$applicant['image'];?>"><img src="<?php echo base_url('/images')."/".$applicant['applicant_id']."/".$applicant['image'];?>" width="150"></a>
-                <?php }?>
-            </div>
-
-        </div>
+<div class="section">
+    <h2>Financial Information</h2>
+    <div class="content">
+        <label>Yearly Expense  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal;"><?php echo "1000000/-";?></span><br>
+        <label>Relative Information  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo "fsdfds asdasd";?></span><br>
+        <label>Relative Support  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo "asdasdsadas";?></span><br>
+        <label>Sponsor Information  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo "sdfasfsf";?></span><br>
+        <label>Bank Name  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo "sfdsfsdf";?></span><br>
+        <label>Bank Amount  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo "1870000/-";?></span><br>
 
     </div>
-</section>
+</div>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<!-- toolTip JS -->
-<!-- End ToolTip JS -->
 
-<script src="js/bootstrap.min.js"></script>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-</body>
-</html>
+</body></html>
