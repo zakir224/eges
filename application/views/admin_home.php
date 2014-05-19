@@ -56,7 +56,7 @@
                                 <p>
 
                                     <a href="<?php echo base_url('index.php/admin_cont/applicantFile')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top"
-                                       title="Applicant Attachment" >
+                                       title="Dashboard" >
                                         <span class="glyphicon glyphicon-book" ></span>
                                     </a>
                                     <a href="<?php echo base_url('index.php/admin_cont/applicantStatus')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Update Status">

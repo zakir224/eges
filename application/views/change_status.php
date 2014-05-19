@@ -67,7 +67,7 @@
 
                         <div class="col-lg-9">
                             <input type="text" class="form-control" name="status_s" id="status_s" value="<?php echo $applicant['status'];?>" placeholder="write here"
-                                   style="margin-left:146px; margin-top: 10px; visibility:hidden ;" >
+                                   style="margin-left:132px; margin-top: 10px; visibility:hidden ;" >
                         </div>
                         <script type="text/javascript">
                             function others(pqr){
@@ -102,13 +102,17 @@
                     <div class="col-lg-2 ">
                         <div class="form-group">
                             <div class="col-lg-6">
-                                <input type="submit" value="Update" class="btn btn-primary btn-sm" style="margin-left: 400px; margin-top: 10px">
+                                <input type="submit" value="Update" class="btn btn-primary btn-sm" style="margin-left: 350px; margin-top: 10px">
+
+                            </div>
+                            <div class="col-lg-6">
+                                 <a href="<?php echo base_url('index.php/admin_cont/home');?>" class="btn btn-success btn-sm" style="margin-left: 380px; margin-top: 10px">Cancel
+                                </a>
                             </div>
                         </div>
                     </div>
 
-                    <a href="<?php echo base_url('index.php/admin_cont/home');?>" class="btn btn-success btn-sm" style="margin-left: 400px; margin-top: 10px">Cancel
-                    </a>
+
 
                 </div>
 
