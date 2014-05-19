@@ -34,23 +34,22 @@
 
                     <h4>Personal Information</h4>
                     <hr>
-                    <li><span>First Name:</span> <?php echo "afdsfsas";?></li>
+                    <li><span style="font-size: medium">Full Name:</span>   <?php echo $applicant['first_name']." ".$applicant['last_name'];?></li>
                     &nbsp;
-                    <li style=""><span>Last Name:</span> <?php echo "afdsfsas";?></li>
+
+                    <li><span style="font-size: medium">Father's Name:</span>   <?php echo $applicant['father_name'];?></li>
                     &nbsp;
-                    <li><span>Father's Name:</span> <?php echo "afdsfsas";?></li>
+                    <li><span style="font-size: medium">Mother's Name:</span>   <?php echo $applicant['mother_name'];?></li>
                     &nbsp;
-                    <li><span>Mother's Name:</span> <?php echo "afdsfsas";?></li>
+                    <li><span style="font-size: medium">Date Of Birth:</span>   <?php echo $applicant['d_o_b'];?></li>
                     &nbsp;
-                    <li><span>Date Of Birth:</span> <?php echo "00/11/2000";?></li>
+                    <li><span style="font-size: medium">Present Address:</span>   <?php echo $applicant['present_add'];?></li>
                     &nbsp;
-                    <li><span>Present Address:</span> dhanmondi,dhaka-1200,Bangladesh</li>
+                    <li><span style="font-size: medium">Permanent Address:</span>   <?php echo $applicant['parmanent_add'];?></li>
                     &nbsp;
-                    <li><span>Permanent Address:</span> dhanmondi,dhaka-1200,Bangladesh</li>
+                    <li><span style="font-size: medium">E-mail:</span> <a href="#">    <?php echo $applicant['email'];?></a></li>
                     &nbsp;
-                    <li><span>E-mail:</span> <a href="#">jhgj@gmail.com</a></li>
-                    &nbsp;
-                    <li><span>Mobile Number:</span>+880-1812345678</li>
+                    <li><span style="font-size: medium;">Mobile Number:</span>    <?php echo $applicant['mobile'];?></li>
                     &nbsp;
                     <li>
                         <h4>Educational Information</h4>
@@ -65,9 +64,9 @@
 
                             <tr>
                                 <td >Secondary/Equivalent level</td>
-                                <td >5.00</td>
-                                <td>Feni Govt. Pilot High School</td>
-                                <td >2007</td>
+                                <td ><?php echo $edu["ssc_gpa_result"]?></td>
+                                <td><?php echo $edu["ssc_institution"]?></td>
+                                <td ><?php echo $edu["ssc_passing_year"]?></td>
 
                             </tr>
                             <tr>

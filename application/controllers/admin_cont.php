@@ -23,7 +23,8 @@ class admin_cont extends CI_Controller {
         $this->load->view('dashboard',$data);
     }
     public function applicantCv($id){
-        $data['applicant'] = $this->user_model->applicant_info($id);
+        $data['applicant'] = $this->user_model->get_applicant_info($id);
+        $data['edu'] = $this->user_model->getEducationInfo($id);
         $this->load->view('applicant_cv',$data);
     }
     public function applicantStatus($id){
