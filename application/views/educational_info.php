@@ -24,16 +24,16 @@
 
 <section class="container">
     <div class="row" style="">
-        <form action="<?php echo base_url('index.php/welcome/update_education_info')?>" class="form-horizontal"  role="form" method="post" enctype="multipart/form-data">
+        <form action="<?php echo base_url('index.php/admin/update_education_info')?>" class="form-horizontal"  role="form" method="post" enctype="multipart/form-data">
 
             <div class="col-lg-12 well divShadow" style="background: #ffffff">
                 <div class="col-lg-12" >
 
                     <ul class="nav nav-tabs">
-                        <li><a href="<?php echo base_url('index.php/welcome/personal_info')."/".$educational['applicant_id']?>"><span class="glyphicon glyphicon-user"></span>&nbsp;Personal Information</a></li>
-                        <li><a href="<?php echo base_url('index.php/welcome/financial_info')."/".$educational['applicant_id']?>"><span class="glyphicon glyphicon-usd"></span>&nbsp;Financial Information</a></li>
-                        <li  class="active"><a href="<?php echo base_url('index.php/welcome/education_info')."/".$educational['applicant_id']?>"><span class="glyphicon glyphicon-book"></span>&nbsp;Educational Information</a></li>
-                        <li><a href="<?php echo base_url('index.php/welcome/preferences')."/".$educational['applicant_id']?>"><span class="glyphicon glyphicon-tags"></span>&nbsp; Preference</a></li>
+                        <li><a href="<?php echo base_url('index.php/admin/personal_info')."/".$educational['applicant_id']?>"><span class="glyphicon glyphicon-user"></span>&nbsp;Personal Information</a></li>
+                        <li><a href="<?php echo base_url('index.php/admin/financial_info')."/".$educational['applicant_id']?>"><span class="glyphicon glyphicon-usd"></span>&nbsp;Financial Information</a></li>
+                        <li  class="active"><a href="<?php echo base_url('index.php/admin/education_info')."/".$educational['applicant_id']?>"><span class="glyphicon glyphicon-book"></span>&nbsp;Educational Information</a></li>
+                        <li><a href="<?php echo base_url('index.php/admin/preferences')."/".$educational['applicant_id']?>"><span class="glyphicon glyphicon-tags"></span>&nbsp; Preference</a></li>
                     </ul>
                     <p class="navbar-text navbar-right" style="font-size: 10pt;">Signed in for <span class="alert-danger"><?php echo $applicant['first_name']." ".$applicant['last_name']?></span></p>
 

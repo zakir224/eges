@@ -49,10 +49,10 @@
 
                                 <td>
                                     <p>
-                                    <form action="<?php echo base_url('index.php/welcome/personal_info');?>" method="get">
-                                        <a href="<?php echo base_url('index.php/welcome/downloadAttachment/')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-download"></span></a>
+                                    <form action="<?php echo base_url('index.php/admin/personal_info');?>" method="get">
+                                        <a href="<?php echo base_url('index.php/admin/downloadAttachment/')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-download"></span></a>
 
-                                        <a href="<?php echo base_url('index.php/welcome/personal_info/')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
+                                        <a href="<?php echo base_url('index.php/admin/personal_info/')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
                                     </p>
                                 </td>
                             </tr>

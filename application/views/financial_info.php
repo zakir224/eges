@@ -24,13 +24,13 @@
 
 <section class="container">
     <div class="row">
-        <form class="form-horizontal" role="form" enctype="multipart/form-data" method="post" action="<?php echo base_url('index.php/welcome/update_financial_info')?>">
+        <form class="form-horizontal" role="form" enctype="multipart/form-data" method="post" action="<?php echo base_url('index.php/admin/update_financial_info')?>">
             <div class="col-lg-12 well divShadow" style="background: #ffffff">
                 <ul class="nav nav-tabs">
-                    <li><a href="<?php echo base_url('index.php/welcome/personal_info')."/".$financial['applicant_id']?>"><span class="glyphicon glyphicon-user"></span>&nbsp;Personal Information</a></li>
-                    <li  class="active"><a href="<?php echo base_url('index.php/welcome/financial_info')."/".$financial['applicant_id']?>"><span class="glyphicon glyphicon-usd"></span>&nbsp;Financial Information</a></li>
-                    <li><a href="<?php echo base_url('index.php/welcome/education_info')."/".$financial['applicant_id']?>"><span class="glyphicon glyphicon-book"></span>&nbsp;Educational Information</a></li>
-                    <li><a href="<?php echo base_url('index.php/welcome/preferences')."/".$financial['applicant_id']?>"><span class="glyphicon glyphicon-tags"></span>&nbsp; Preference</a></li>
+                    <li><a href="<?php echo base_url('index.php/admin/personal_info')."/".$financial['applicant_id']?>"><span class="glyphicon glyphicon-user"></span>&nbsp;Personal Information</a></li>
+                    <li  class="active"><a href="<?php echo base_url('index.php/admin/financial_info')."/".$financial['applicant_id']?>"><span class="glyphicon glyphicon-usd"></span>&nbsp;Financial Information</a></li>
+                    <li><a href="<?php echo base_url('index.php/admin/education_info')."/".$financial['applicant_id']?>"><span class="glyphicon glyphicon-book"></span>&nbsp;Educational Information</a></li>
+                    <li><a href="<?php echo base_url('index.php/admin/preferences')."/".$financial['applicant_id']?>"><span class="glyphicon glyphicon-tags"></span>&nbsp; Preference</a></li>
                 </ul>
                 <p class="navbar-text navbar-right" style="font-size: 10pt;">Signed in for <span class="alert-danger"><?php echo $applicant['first_name']." ".$applicant['last_name']?></span></p>
 

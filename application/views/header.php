@@ -7,8 +7,8 @@
             <nav class="nav pull-right topNav">
                 <ul class="nav nav-pills">
                     <li><a href="<?php echo base_url('');?>"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
-                    <li><a href="<?php echo base_url('index.php/welcome/new_applicant');?>"><span class="glyphicon glyphicon-plus"></span>&nbsp;New Applicant</a></li>
-                    <li><a href="<?php echo base_url('index.php/welcome/');?>"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign out</a></li>
+                    <li><a href="<?php echo base_url('index.php/admin/new_applicant');?>"><span class="glyphicon glyphicon-plus"></span>&nbsp;New Applicant</a></li>
+                    <li><a href="<?php echo base_url('index.php/admin/');?>"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign out</a></li>
 <!--                    <li class="dropdown">-->
 <!--                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">-->
 <!--                            Dropdown<span class="caret"></span>-->

@@ -25,7 +25,7 @@
 
 <section class="container">
     <div class="row">
-        <form action="<?php echo base_url('index.php/welcome/insert_new_applicant')?>" class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+        <form action="<?php echo base_url('index.php/admin/insert_new_applicant')?>" class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
             <div class="col-lg-12 well divShadow" style="background: #ffffff">
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="applicant_reg.php"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Registration Of New Applicant</a></li>

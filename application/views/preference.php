@@ -27,10 +27,10 @@
         <form class="form-horizontal" role="form">
             <div class="col-lg-12 well divShadow" style="background: #ffffff">
                 <ul class="nav nav-tabs">
-                    <li><a href="<?php echo base_url('index.php/welcome/personal_info')."/".$preference['applicant_id']?>"><span class="glyphicon glyphicon-user"></span>&nbsp;Personal Information</a></li>
-                    <li><a href="<?php echo base_url('index.php/welcome/financial_info')."/".$preference['applicant_id']?>"><span class="glyphicon glyphicon-usd"></span>&nbsp;Financial Information</a></li>
-                    <li><a href="<?php echo base_url('index.php/welcome/education_info')."/".$preference['applicant_id']?>"><span class="glyphicon glyphicon-book"></span>&nbsp;Educational Information</a></li>
-                    <li   class="active"><a href="<?php echo base_url('index.php/welcome/preferences')."/".$preference['applicant_id']?>"><span class="glyphicon glyphicon-tags"></span>&nbsp; Preference</a></li>
+                    <li><a href="<?php echo base_url('index.php/admin/personal_info')."/".$preference['applicant_id']?>"><span class="glyphicon glyphicon-user"></span>&nbsp;Personal Information</a></li>
+                    <li><a href="<?php echo base_url('index.php/admin/financial_info')."/".$preference['applicant_id']?>"><span class="glyphicon glyphicon-usd"></span>&nbsp;Financial Information</a></li>
+                    <li><a href="<?php echo base_url('index.php/admin/education_info')."/".$preference['applicant_id']?>"><span class="glyphicon glyphicon-book"></span>&nbsp;Educational Information</a></li>
+                    <li   class="active"><a href="<?php echo base_url('index.php/admin/preferences')."/".$preference['applicant_id']?>"><span class="glyphicon glyphicon-tags"></span>&nbsp; Preference</a></li>
                 </ul>
                 <hr>
 

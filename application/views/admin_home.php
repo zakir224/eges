@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>EGES |SuperAdmin panel</title>
 
     <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
 
@@ -55,26 +55,26 @@
                             <td>
                                 <p>
 
-                                    <a href="<?php echo base_url('index.php/admin_cont/applicantFile')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top"
+                                    <a href="<?php echo base_url('index.php/superadmin/applicantFile')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top"
                                        title="Dashboard" >
                                         <span class="glyphicon glyphicon-book" ></span>
                                     </a>
-                                    <a href="<?php echo base_url('index.php/admin_cont/applicantStatus')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Update Status">
+                                    <a href="<?php echo base_url('index.php/superadmin/applicantStatus')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Update Status">
                                         <span class="glyphicon glyphicon-edit"></span>
                                     </a>
 
 
-                                    <a href="<?php echo base_url('index.php/admin_cont/delete_applicant')."/".$applicant[$i]['applicant_id'];?>" onclick="return show_me()" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top"
+                                    <a href="<?php echo base_url('index.php/superadmin/delete_applicant')."/".$applicant[$i]['applicant_id'];?>" onclick="return show_me()" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top"
                                        title="Delete" >
                                         <span class="glyphicon glyphicon-remove-sign" ></span>
                                     </a>
 
-                                    <a href="<?php echo base_url('index.php/admin_cont/applicantCv')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top"
+                                    <a href="<?php echo base_url('index.php/superadmin/applicantCv')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top"
                                        title="Applicant CV" >
                                         <span class="glyphicon glyphicon-user" ></span>
                                     </a>
 
-                                    <a href="<?php echo base_url('index.php/welcome/downloadAttachment/')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="Download">
+                                    <a href="<?php echo base_url('index.php/admin/downloadAttachment/')."/".$applicant[$i]['applicant_id'];?>" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="Download">
                                         <span class="glyphicon glyphicon-download"></span>
                                     </a>
                                 </p>

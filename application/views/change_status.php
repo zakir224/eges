@@ -23,7 +23,7 @@
 
 <section class="container">
     <div class="row">
-        <form action="<?php echo base_url('index.php/admin_cont/update_status_info')?>" class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+        <form action="<?php echo base_url('index.php/superadmin/update_status_info')?>" class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
             <div class="col-lg-12 well divShadow" style="background: #ffffff">
                 <ul class="nav nav-tabs">
                     <li  class="active"><a href=""><span class="glyphicon glyphicon-user"></span>&nbsp;Applicant Status</a></li>
@@ -106,7 +106,7 @@
 
                             </div>
                             <div class="col-lg-6">
-                                 <a href="<?php echo base_url('index.php/admin_cont/home');?>" class="btn btn-success btn-sm" style="margin-left: 380px; margin-top: 10px">Cancel
+                                 <a href="<?php echo base_url('index.php/superadmin/home');?>" class="btn btn-success btn-sm" style="margin-left: 380px; margin-top: 10px">Cancel
                                 </a>
                             </div>
                         </div>
