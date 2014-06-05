@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <title>Resume | First Last</title>
+    <title>Applicant CV</title>
     <!-- Bootstrap -->
 
     <meta name="robots" content="noindex, nofollow">
@@ -23,7 +23,7 @@
             padding:1em;
         }
         #address div{
-            width:16em;
+            width:14em;
             float:left;
         }
         #address h3{
@@ -87,7 +87,7 @@
 
 <div id="address">
 
-    <div id="" style="margin-left: 150px">
+    <div id="" style="margin-left: 230px">
         <h3><?php echo $applicant['first_name']." ".$applicant['last_name'];?></h3>
         <a href="#"><?php echo $applicant['email'];?></a> <br>
         <?php echo $applicant['mobile'];?><br>
@@ -96,7 +96,7 @@
     <div >
         <?php if($applicant['image']) {?>
             <a href="<?php echo base_url('/images')."/".$applicant['applicant_id']."/".$applicant['image'];?>">
-                <img style="margin-top: 10px;" src="<?php echo base_url('/images')."/".$applicant['applicant_id']."/".$applicant['image'];?>" width="120"></a>
+                <img style="margin-top: 10px;" src="<?php echo base_url('/images')."/".$applicant['applicant_id']."/".$applicant['image'];?>" width="100"></a>
         <?php }?>
     </div>
 
@@ -105,28 +105,39 @@
 <div class="section">
     <h2>Personal Information</h2>
     <div class="content" style="margin-top: 35px;">
-
+        <label>First Name  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal;"><?php echo $applicant['first_name'];?></span><br>
+        <label>Last Name  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo $applicant['last_name'];?></span><br>
         <label>Father's Name  :</label>&nbsp;&nbsp;
         <span style="font-size: 14;font-style: normal;"><?php echo $applicant['father_name'];?></span><br>
         <label>Mother's Name  :</label>&nbsp;&nbsp;
         <span style="font-size: 14;font-style: normal"><?php echo $applicant['mother_name'];?></span><br>
+        <label>Gender  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo $applicant['gender'];?></span><br>
         <label>Date Of Birth  :</label>&nbsp;&nbsp;
         <span style="font-size: 14;font-style: normal"><?php echo $applicant['d_o_b'];?></span><br>
+        <label>Present Address  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo $applicant['present_add'];?></span><br>
         <label>Permanent Address  :</label>&nbsp;&nbsp;
         <span style="font-size: 14;font-style: normal"><?php echo $applicant['parmanent_add'];?></span><br>
+        <label>E-mail  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo $applicant['email'];?></span><br>
+        <label>Mobile  :</label>&nbsp;&nbsp;
+        <span style="font-size: 14;font-style: normal"><?php echo $applicant['mobile'];?></span><br>
         <label>Guardian Mobile  :</label>&nbsp;&nbsp;
-        <span style="font-size: 14;font-style: normal"><?php echo "012312323";?></span><br>
+        <span style="font-size: 14;font-style: normal"><?php echo $applicant['guardian_mobile'];?></span><br>
         <label>Religion  :</label>&nbsp;&nbsp;
-        <span style="font-size: 14;font-style: normal"><?php echo "Muslim";?></span><br>
+        <span style="font-size: 14;font-style: normal"><?php echo $applicant['religion'];?></span><br>
         <label>Passport No  :</label>&nbsp;&nbsp;
-        <span style="font-size: 14;font-style: normal"><?php echo "4535-453-34534";?></span><br>
+        <span style="font-size: 14;font-style: normal"><?php echo $applicant['passport_no'];?></span><br>
         <label>National ID  :</label>&nbsp;&nbsp;
-        <span style="font-size: 14;font-style: normal"><?php echo "34234-234-23432";?></span><br>
+        <span style="font-size: 14;font-style: normal"><?php echo $applicant['national_id'];?></span><br>
 
         <label>IELTS Score  :</label>&nbsp;&nbsp;
-        <span style="font-size: 14;font-style: normal"><?php echo "7.5";?></span><br>
+        <span style="font-size: 14;font-style: normal"><?php echo $applicant['ielts_toefl_score'];?></span><br>
         <label>GRE  :</label>&nbsp;&nbsp;
-        <span style="font-size: 14;font-style: normal"><?php echo "5";?></span><br>
+        <span style="font-size: 14;font-style: normal"><?php echo $applicant['gre_gmat_score'];?></span><br>
     </div>
 </div>
 

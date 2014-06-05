@@ -25,16 +25,16 @@ class SuperAdmin extends CI_Controller {
     public function applicantCv($id){
         $data['applicant'] = $this->user_model->get_applicant_info($id);
         $data['edu'] = $this->user_model->getEducationInfo($id);
-        //$this->load->view('applicant_cv',$data);
-        $html = $this->load->view('attachment', $data, true);
-        $pdfFilePath = $id."_".$data['applicant']['first_name'].".pdf";
-        $html = $this->load->view('applicant_cv',$data,true);
-        $this->load->library('pdf');
-        $pdf = $this->pdf->load();
-        $pdf->SetHeader("Education for Destination | Expert Global Education Services | ".$id." ".$data['applicant']['first_name']);
-        $pdf->SetFooter("EGES All rights reserved ,".$_SERVER['HTTP_HOST'].'|{PAGENO}|'.date(DATE_RFC822));
-        $pdf->WriteHTML($html);
-        $pdf->Output($pdfFilePath, 'D');
+        $this->load->view('applicant_cv',$data);
+//        $html = $this->load->view('attachment', $data, true);
+//        $pdfFilePath = $id."_".$data['applicant']['first_name'].".pdf";
+//        $html = $this->load->view('applicant_cv',$data,true);
+//        $this->load->library('pdf');
+//        $pdf = $this->pdf->load();
+//        $pdf->SetHeader("Education for Destination | Expert Global Education Services | ".$id." ".$data['applicant']['first_name']);
+//        $pdf->SetFooter("EGES All rights reserved ,".$_SERVER['HTTP_HOST'].'|{PAGENO}|'.date(DATE_RFC822));
+//        $pdf->WriteHTML($html);
+//        $pdf->Output($pdfFilePath, 'D');
 
     }
     public function applicantStatus($id){

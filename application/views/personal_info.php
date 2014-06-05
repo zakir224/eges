@@ -179,7 +179,7 @@
 
                         <div class="form-group">
                             <div class="col-lg-9">
-                                <input type="submit" value="Update" class="btn btn-primary btn-sm" style="margin-left: 480px">
+                                <input type="submit" value="Update" class="btn btn-primary btn-sm" style="margin-left: 400px">
                             </div>
                         </div>
                     </div>
