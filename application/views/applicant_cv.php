@@ -153,6 +153,7 @@
                 <th width="15%" style="text-align: center">Passing Year</th>
             </tr>
 
+            
             <tr>
                 <td >Secondary/Equivalent level</td>
                 <td ><?php echo $edu["ssc_gpa_result"]?></td>
